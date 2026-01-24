@@ -63,7 +63,7 @@ const Projects = () => {
                     </div>
 
                     {/* Buttons */}
-                    <div className="flex gap-3 mt-6">
+                    {/* <div className="flex gap-3 mt-6">
                       <a
                         href={project.liveDemo}
                         target="_blank"
@@ -80,7 +80,7 @@ const Projects = () => {
                       >
                         Source
                       </a>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </article>

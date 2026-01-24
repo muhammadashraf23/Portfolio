@@ -51,6 +51,6 @@ export const projects = [
     technologies: ["Next.js", "Three.js", "Framer Motion", "TailwindCSS"],
     liveDemo: "https://muhammad-ashraf.vercel.app",
     github: "https://github.com/MuhammadAshraf23/Portfolio",
-    image: "/images/projects/portfolio.png",
+    image: "/images/projects/portfolio_image.png",
   },
 ];
