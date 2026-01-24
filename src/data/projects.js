@@ -1,47 +1,56 @@
 export const projects = [
   {
-    title: "E-Commerce Website",
+    title: "Baltistan Baking Store",
     description:
-      "An online store built with Next.js and Firebase, featuring dynamic cart management, secure user authentication, and a responsive UI.",
+      "A premium e-commerce experience built for a baking and grocery brand. Features dynamic cart management, secure checkout, and a sleek, high-conversion UI design.",
     technologies: ["Next.js", "Firebase", "Redux", "TailwindCSS"],
     liveDemo: "https://baltistanbakingstore.vercel.app/",
     github: "https://github.com/MuhammadAshraf23/Baltistan-baking-Grocery",
-    image: "/images/projects/store.PNG",
+    image: "/images/projects/baking-store.png",
   },
   {
-    title: "Portfolio Website",
+    title: "Zoomaro",
     description:
-      "A personal portfolio showcasing my skills, projects, and experience using Next.js and Framer Motion for smooth animations.",
-    technologies: ["Next.js", "Framer Motion"],
-    liveDemo: "https://portfolio-demo.com", // Replace with the actual URL
-    github: "https://github.com/MuhammadAshraf23/Portfolio", // Replace with the actual URL
-    image: "/images/projects/portfolio.PNG", // Replace with the actual image path
+      "A cutting-edge video sharing and communication platform similar to Loom. Enables users to record, share, and collaborate on videos with seamless processing and cloud integration.",
+    technologies: ["Next.js", "Node.js", "WebRTC", "Cloudinary"],
+    liveDemo: "#",
+    github: "https://github.com/MuhammadAshraf23",
+    image: "/images/projects/zoomaro.png",
   },
   {
-    title: "Weather App",
+    title: "Uni-Chat",
     description:
-      "A weather forecasting application that uses the OpenWeather API to provide real-time weather updates and a simple, user-friendly interface.",
-    technologies: ["Javascript", "OpenWeather API", "CSS"],
-    liveDemo: "https://weather-app-demo.com", // Replace with the actual URL
-    github: "https://github.com/MuhammadAshraf23/Weather-App", // Replace with the actual URL
-    image: "/images/projects/weather.png", // Replace with the actual image path
+      "A comprehensive real-time communication suite featuring encrypted chatting, HD video calls, and distributed cloud storage. Built as an advanced DCN project focusing on network protocols.",
+    technologies: ["React", "Node.js", "Socket.io", "PeerJS", "MongoDB"],
+    liveDemo: "#",
+    github: "https://github.com/MuhammadAshraf23",
+    image: "/images/projects/uni-chat.png",
   },
   {
-    title: "Attendance App",
+    title: "Attendance Management System",
     description:
-      "A full-stack attendance management application built with the MERN stack, featuring secure user authentication and real-time data tracking.",
+      "A professional full-stack attendance tracking solution designed for scalability. Implements sophisticated authentication and real-time data visualization.",
     technologies: ["MongoDB", "Express.js", "React", "Node.js"],
-    liveDemo: "https://attendance-app-demo.com", 
-    github: "https://github.com/MuhammadAshraf23/attendence-app", 
-    image: "/images/projects/attendance.PNG", 
+    liveDemo: "https://attendance-app-demo.com",
+    github: "https://github.com/MuhammadAshraf23/attendence-app",
+    image: "/images/projects/attendance.PNG",
   },
   {
-    title: "Internship Website",
+    title: "Internee.pk Clone",
     description:
-      "A platform developed using the React to connect students with internships, featuring dynamic user profiles and secure authentication.",
-    technologies: ["React", "MUI"],
-    liveDemo: "https://ashraf-interneepk.netlify.app/", 
+      "A refined internship portal connecting students with industry opportunities. Focuses on user-centric dashboard design and seamless application workflows.",
+    technologies: ["React", "MUI", "Framer Motion"],
+    liveDemo: "https://ashraf-interneepk.netlify.app/",
     github: "https://github.com/MuhammadAshraf23/Internee.pk",
     image: "/images/projects/internee.png",
+  },
+  {
+    title: "Modern Portfolio",
+    description:
+      "A high-performance personal portfolio featuring strategic 3D elements and immersive animations to showcase full-stack expertise and design sensibility.",
+    technologies: ["Next.js", "Three.js", "Framer Motion", "TailwindCSS"],
+    liveDemo: "https://muhammad-ashraf.vercel.app",
+    github: "https://github.com/MuhammadAshraf23/Portfolio",
+    image: "/images/projects/portfolio.png",
   },
 ];

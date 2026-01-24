@@ -1,46 +1,62 @@
+"use client";
+
 import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
 import { skills } from "@/data/skills";
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-12 text-white">
-      <h2 className="text-center text-3xl font-bold mb-8">Skills</h2>
+    <section id="skills" className="py-20 text-white relative z-20 overflow-hidden">
+      {/* Elegant Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan-900/20 via-background to-accent-purple-900/20 z-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(6,182,212,0.15),transparent_50%)] z-0" />
 
-      {/* Adding a staggered animation to the skill icons */}
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-items-center">
-        {skills.map((skill, index) => (
-          <AnimatedSection
-            key={skill.name}
-            delay={index * 0.1} // Delay each skill based on its index
-            initial={{ opacity: 0, scale: 0.8, rotate: -10 }} // Slight rotation and scaling down initially
-            whileInView={{
-              opacity: 1, // Fully visible when in view
-              scale: 1, // Normal scale when in view
-              rotate: 0, // Remove rotation when in view
-            }}
-            transition={{
-              duration: 0.4, // Slightly faster transition
-              type: "spring", // Spring effect for a bouncy feel
-              stiffness: 120, // Adjust stiffness for a faster bounce
-              damping: 20, // Reduced damping for a more lively effect
-            }}
-            viewport={{ once: true }} // Trigger the animation only once when in view
-          >
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 mb-2">
-                <Image
-                  src={skill.src}
-                  alt={skill.name}
-                  width={64}
-                  height={64}
-                  className="object-contain rounded-full bg-white"
-                />
+      <div className="container mx-auto px-4 relative z-10">
+        <h2 className="text-center text-5xl md:text-6xl font-bold mb-16 text-gradient">
+          Skills & Technologies
+        </h2>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-items-center max-w-6xl mx-auto">
+          {skills.map((skill, index) => (
+            <AnimatedSection
+              key={skill.name}
+              delay={index * 0.05}
+              initial={{ opacity: 0, scale: 0.5, y: 50 }}
+              whileInView={{
+                opacity: 1,
+                scale: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.5,
+                type: "spring",
+                stiffness: 100,
+              }}
+              viewport={{ once: true }}
+            >
+              <div className="group relative w-full">
+                {/* Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-accent-purple-500 to-accent-cyan-500 rounded-2xl blur-md opacity-0 group-hover:opacity-60 transition-opacity duration-300" />
+
+                {/* Card */}
+                <div className="relative flex flex-col items-center p-6 glass-container rounded-2xl hover:border-accent-cyan-500 border-2 border-transparent transition-all duration-300 hover:scale-110 hover:shadow-glow-cyan">
+                  <div className="w-16 h-16 mb-3 relative">
+                    <Image
+                      src={skill.src}
+                      alt={skill.name}
+                      width={64}
+                      height={64}
+                      className="object-contain rounded-lg bg-white/90 p-2 relative z-10"
+                    />
+                  </div>
+                  <p className="text-sm font-bold text-center text-gradient-secondary">
+                    {skill.name}
+                  </p>
+                </div>
               </div>
-              <p className="text-sm font-medium">{skill.name}</p>
-            </div>
-          </AnimatedSection>
-        ))}
+            </AnimatedSection>
+          ))}
+        </div>
       </div>
     </section>
   );

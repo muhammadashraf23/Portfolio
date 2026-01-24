@@ -1,89 +1,103 @@
-import Image from "next/image";
-import AnimatedSection from "./AnimatedSection"; // Import your AnimatedSection component
+"use client";
+
+import { motion } from "framer-motion";
+import Scene from "./canvas/Scene";
 
 export default function HeroSection() {
   return (
-    <section className="flex md:h-[90vh] lg:h-[100vh] max-md:flex-col items-center justify-between text-white px-6 md:px-20 max-sm:px-2 pt-20 gap-8">
-      {/* Image Section */}
-      <AnimatedSection
-        className="flex-2 flex items-center justify-center max-md:w-[50%] w-[30%] h-[70%]"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <Image
-          src="/images/Profile picture.png"
-          alt="Muhammad Ashraf"
-          width={400}
-          height={400}
-          priority
-          quality={100}
-          className="rounded-full shadow-lg max-sm:w-[200px] max-sm:h-[200px] transition-transform duration-300 ease-in-out hover:scale-105"
-        />
-      </AnimatedSection>
+    <div className="relative flex flex-col h-full w-full" id="about">
 
-      {/* Text Section */}
-      <AnimatedSection
-        className="flex-1 text-center md:text-left max-sm:m-1 ml-24"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <h1 className="text-4xl font-bold mb-4 max-sm:text-3xl">
-          Hi, I'm Muhammad Ashraf
-        </h1>
-        <p className="text-lg md:text-xl mb-6 max-sm:text-base">
-          A passionate <span className="text-blue-500">MERN Stack Developer</span> dedicated to creating efficient, responsive, and visually stunning web applications.
-        </p>
-        {/* Social Icons */}
-        <div className="flex justify-center md:justify-start gap-4 mb-6">
-          <a
-            href="https://linkedin.com/in/muhammadashraf23"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-blue-400 text-2xl border-none"
+      {/* Full Screen 3D Background */}
+      <div className="absolute top-0 left-0 w-full h-full z-[0]">
+        <Scene />
+      </div>
+
+      {/* Content Overlay */}
+      <section className="relative flex flex-col items-center justify-center w-full h-screen px-6 md:px-20 z-[20] pointer-events-none">
+
+        {/* Text Section - Centered and Interactive */}
+        <div className="flex flex-col gap-5 justify-center items-center text-center w-full max-w-[900px] pointer-events-auto">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="py-[8px] px-[10px] border border-accent-purple-500/50 opacity-[0.9] rounded-full w-fit glass-container"
           >
-            <Image
-              src="/images/linkedin.svg"
-              width={40}
-              height={40}
-              alt="linkedin"
-              className="bg-white rounded"
-            />
-          </a>
-          <a
-            href="https://github.com/muhammadashraf23"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-gray-200 text-2xl"
+            <span className="text-gray-300 text-sm font-medium">
+              Full Stack Developer
+            </span>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex flex-col gap-6 mt-6 text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight tracking-tight"
           >
-            <Image
-              src="/images/skills/github-color.svg"
-              width={40}
-              height={40}
-              alt="github"
-              className="bg-white rounded-full"
-            />
-          </a>
+            <span>
+              Hi, I'm{" "}
+              <span className="text-gradient">
+                Muhammad Ashraf
+              </span>
+            </span>
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-lg md:text-xl text-gray-400 my-5 max-w-[700px] leading-relaxed"
+          >
+            I build modern, scalable web and mobile applications using cutting-edge technologies.
+            Specialized in React, Vue, Node.js, and databases. Passionate about creating exceptional user experiences.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="flex gap-4 flex-wrap justify-center"
+          >
+            <a
+              href="#contact"
+              className="py-3 px-8 text-center text-white cursor-pointer rounded-lg hover:scale-105 transition-all bg-gradient-primary shadow-glow-purple hover:shadow-glow-cyan font-semibold"
+            >
+              Get In Touch
+            </a>
+            <a
+              href="#projects"
+              className="py-3 px-8 border-2 border-accent-purple-500/50 text-white rounded-lg hover:border-accent-cyan-500 hover:bg-accent-purple-900/30 transition-all glass-container font-semibold"
+            >
+              View Projects
+            </a>
+          </motion.div>
         </div>
 
-        {/* Buttons */}
-        <div className="flex flex-col md:flex-row gap-4">
-          <a
-            href="#contact"
-            className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700"
-          >
-            Contact Me
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 1 }}
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 pointer-events-auto"
+        >
+          <a href="#about" className="flex flex-col items-center gap-2 group">
+            <span className="text-gray-400 text-sm font-medium group-hover:text-accent-cyan-400 transition-colors">
+              Scroll to explore
+            </span>
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              className="w-6 h-10 border-2 border-accent-purple-500/50 rounded-full flex items-start justify-center p-2 group-hover:border-accent-cyan-500 transition-colors"
+            >
+              <motion.div
+                animate={{ y: [0, 12, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                className="w-1.5 h-1.5 bg-gradient-primary rounded-full"
+              />
+            </motion.div>
           </a>
-          <a
-            href="/resume.pdf"
-            download
-            className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700"
-          >
-            Download My Resume
-          </a>
-        </div>
-      </AnimatedSection>
-    </section>
+        </motion.div>
+      </section>
+    </div>
   );
 }

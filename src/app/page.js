@@ -10,21 +10,21 @@ import SkillsSection from "@/components/SkillsSection";
 
 export default function Home() {
   return (
-    <div className="bg-gray-900">
+    <div className="bg-background">
       <HeroSection />
-      <hr className="max-sm:mt-2"/>
+      <div className="section-divider max-sm:mt-2" />
       <About />
-      <hr/>
-      <SkillsSection/>
-      <hr/>
+      <div className="section-divider" />
+      <SkillsSection />
+      <div className="section-divider" />
       <Projects />
-      <hr/>
+      <div className="section-divider" />
       <Experience />
-      <hr/>
+      <div className="section-divider" />
       <Education />
-      <hr/>
+      <div className="section-divider" />
       <Contact />
-      <hr />
+      <div className="section-divider" />
       <Footer />
       <ScrollToTopButton />
     </div>

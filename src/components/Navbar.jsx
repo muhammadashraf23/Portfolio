@@ -1,87 +1,81 @@
 "use client";
 
+import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useState } from "react"; // Import useState for toggling the menu
-import Image from "next/image";
-export default function Navbar() {
+
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <motion.nav
-      initial={{ y: -50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="flex justify-between items-center p-4 bg-gray-800 text-white fixed w-full z-50"
-    >
-      {/* Logo Section */}
-      <div className="text-2xl font-bold">
-        <Image
-        src="/images/logo.PNG"
-        alt="logo"
-        width={45}
-        height={45}
-        className="rounded w-auto h-auto"/>
-      </div>
-
-      {/* Desktop Menu */}
-      <ul className="hidden md:flex space-x-6 text-xl font-bold">
-        <li>
-          <Link href="#about">About</Link>
-        </li>
-        <li>
-          <Link href="#projects">Projects</Link>
-        </li>
-        <li>
-          <Link href="#skills">Skills</Link>
-        </li>
-        <li>
-          <Link href="#experience">Experience</Link>
-        </li>
-      </ul>
-
-      {/* Mobile Hamburger Menu */}
-      <div
-        className="md:hidden flex items-center"
-        onClick={() => setIsMenuOpen(!isMenuOpen)} // Toggle the menu on click
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          className="w-6 h-6"
+    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-accent-purple-900/30 glass-container z-50 px-10 border-b border-accent-purple-500/20">
+      <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
+        <Link
+          href="#about"
+          className="h-auto w-auto flex flex-row items-center group"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h16M4 18h16"
+          <Image
+            src="/images/logo.PNG"
+            alt="logo"
+            width={40}
+            height={40}
+            className="cursor-pointer hover:animate-spin-slow rounded-full"
           />
-        </svg>
-      </div>
+          <span className="font-bold ml-[10px] hidden md:block text-gray-300 group-hover:text-gradient transition-colors">
+            Muhammad Ashraf
+          </span>
+        </Link>
 
-      {/* Mobile Menu */}
-      <div
-        className={`${
-          isMenuOpen ? "block" : "hidden"
-        } md:hidden absolute top-16 left-0 w-full bg-gray-800 text-white p-4`}
-      >
-        <ul className="space-y-4">
-          <li>
-            <Link href="#about" onClick={() => setIsMenuOpen(false)}>About</Link>
-          </li>
-          <li>
-            <Link href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</Link>
-          </li>
-          <li>
-            <Link href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</Link>
-          </li>
-          <li>
-            <Link href="#experience" onClick={() => setIsMenuOpen(false)}>Experience</Link>
-          </li>
-        </ul>
+        <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
+          <div className="flex items-center justify-between w-full h-auto border border-accent-purple-500/30 bg-background/50 backdrop-blur-sm mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
+            <Link href="#about" className="cursor-pointer hover:text-accent-cyan-400 transition-colors">
+              About
+            </Link>
+            <Link href="#skills" className="cursor-pointer hover:text-accent-cyan-400 transition-colors">
+              Skills
+            </Link>
+            <Link href="#projects" className="cursor-pointer hover:text-accent-cyan-400 transition-colors">
+              Projects
+            </Link>
+            <Link href="#experience" className="cursor-pointer hover:text-accent-cyan-400 transition-colors">
+              Experience
+            </Link>
+          </div>
+        </div>
+
+        <div className="flex flex-row gap-5">
+          <a href="/resume.pdf" download className="text-white cursor-pointer hover:text-accent-cyan-400 transition-colors font-medium">
+            Resume
+          </a>
+          <a href="https://github.com/muhammadashraf23" target="_blank" rel="noreferrer" className="text-white cursor-pointer hover:text-accent-cyan-400 transition-colors font-medium">
+            GitHub
+          </a>
+        </div>
+
+        {/* Mobile Toggle */}
+        <div
+          className="md:hidden text-white cursor-pointer text-2xl"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          ☰
+        </div>
       </div>
-    </motion.nav>
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="absolute top-[65px] left-0 w-full glass-card border-b border-accent-purple-500/30 p-5 flex flex-col gap-4 text-white md:hidden"
+        >
+          <Link href="#about" onClick={() => setIsMenuOpen(false)} className="hover:text-accent-cyan-400 transition-colors">About</Link>
+          <Link href="#skills" onClick={() => setIsMenuOpen(false)} className="hover:text-accent-cyan-400 transition-colors">Skills</Link>
+          <Link href="#projects" onClick={() => setIsMenuOpen(false)} className="hover:text-accent-cyan-400 transition-colors">Projects</Link>
+          <Link href="#experience" onClick={() => setIsMenuOpen(false)} className="hover:text-accent-cyan-400 transition-colors">Experience</Link>
+        </motion.div>
+      )}
+    </div>
   );
-}
+};
+
+export default Navbar;
