@@ -13,7 +13,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content Overlay */}
-      <section className="relative flex flex-col items-center justify-center w-full h-screen min-h-[600px] px-4 md:px-20 z-[20] pointer-events-none pt-[70px]">
+      <section className="relative flex flex-col items-center justify-center w-full h-screen min-h-[600px] px-4 md:px-20 z-[20] pointer-events-none pt-[70px] pb-32">
 
         {/* Text Section - Centered and Interactive */}
         <div className="flex flex-col gap-4 md:gap-5 justify-center items-center text-center w-full max-w-[900px] pointer-events-auto">
@@ -78,7 +78,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 1 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 pointer-events-auto"
+          className="absolute bottom-6 left-1/2 transform -translate-x-1/2 pointer-events-auto"
         >
           <a href="#about" className="flex flex-col items-center gap-2 group">
             <span className="text-gray-400 text-sm font-medium group-hover:text-accent-cyan-400 transition-colors">
