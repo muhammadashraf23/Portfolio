@@ -10,17 +10,23 @@ const Scene = () => {
         <Canvas
             className="w-full h-full"
             camera={{ position: [0, 0, 15], fov: 45 }}
-            dpr={[1, 2]}
+            gl={{
+                antialias: false,
+                powerPreference: "high-performance",
+                alpha: true,
+                stencil: false,
+                depth: true
+            }}
+            dpr={[1, 1.5]} // Optimize for performance on high-DPI screens
         >
             <Suspense fallback={null}>
                 {/* Single focal 3D element */}
                 <EnergyRing />
 
                 {/* Subtle ambient lighting */}
-                <ambientLight intensity={0.3} />
-                <pointLight position={[10, 10, 10]} intensity={0.5} />
+                <ambientLight intensity={0.4} />
+                <pointLight position={[10, 10, 10]} intensity={0.6} color="#7042f8" />
 
-                {/* Environment for realistic reflections */}
                 <Environment preset="night" />
             </Suspense>
         </Canvas>

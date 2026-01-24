@@ -3,78 +3,117 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const navLinks = [
+    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+    { name: "Experience", href: "#experience" },
+  ];
+
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-accent-purple-900/30 glass-container z-50 px-10 border-b border-accent-purple-500/20">
-      <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
+    <nav className="w-full h-[70px] fixed top-0 shadow-lg shadow-accent-purple-900/30 glass-container z-[100] px-4 md:px-10 border-b border-accent-purple-500/20">
+      <div className="max-w-7xl h-full flex flex-row items-center justify-between mx-auto">
         <Link
           href="#about"
-          className="h-auto w-auto flex flex-row items-center group"
+          className="h-auto w-auto flex flex-row items-center group z-50"
         >
           <Image
             src="/images/logo.PNG"
             alt="logo"
-            width={40}
-            height={40}
-            className="cursor-pointer hover:animate-spin-slow rounded-full"
+            width={35}
+            height={35}
+            className="cursor-pointer hover:animate-spin-slow rounded-full md:w-[40px] md:h-[40px]"
           />
-          <span className="font-bold ml-[10px] hidden md:block text-gray-300 group-hover:text-gradient transition-colors">
+          <span className="font-bold ml-[10px] hidden sm:block text-gray-300 group-hover:text-gradient transition-colors">
             Muhammad Ashraf
           </span>
         </Link>
 
-        <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
-          <div className="flex items-center justify-between w-full h-auto border border-accent-purple-500/30 bg-background/50 backdrop-blur-sm mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
-            <Link href="#about" className="cursor-pointer hover:text-accent-cyan-400 transition-colors">
-              About
-            </Link>
-            <Link href="#skills" className="cursor-pointer hover:text-accent-cyan-400 transition-colors">
-              Skills
-            </Link>
-            <Link href="#projects" className="cursor-pointer hover:text-accent-cyan-400 transition-colors">
-              Projects
-            </Link>
-            <Link href="#experience" className="cursor-pointer hover:text-accent-cyan-400 transition-colors">
-              Experience
-            </Link>
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center justify-center flex-1 max-w-[500px] mx-4">
+          <div className="flex items-center justify-between w-full h-auto border border-accent-purple-500/30 bg-background/50 backdrop-blur-sm px-[20px] py-[10px] rounded-full text-gray-200">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="cursor-pointer hover:text-accent-cyan-400 transition-colors text-sm lg:text-base px-2"
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
         </div>
 
-        <div className="flex flex-row gap-5">
-          <a href="/resume.pdf" download className="text-white cursor-pointer hover:text-accent-cyan-400 transition-colors font-medium">
+        {/* Desktop Buttons */}
+        <div className="hidden md:flex flex-row gap-5 items-center">
+          <a href="/resume.pdf" download className="text-white cursor-pointer hover:text-accent-cyan-400 transition-colors font-medium border border-accent-purple-500/30 px-4 py-1.5 rounded-full bg-accent-purple-900/10 text-sm">
             Resume
           </a>
-          <a href="https://github.com/muhammadashraf23" target="_blank" rel="noreferrer" className="text-white cursor-pointer hover:text-accent-cyan-400 transition-colors font-medium">
+          <a href="https://github.com/muhammadashraf23" target="_blank" rel="noreferrer" className="text-white cursor-pointer hover:text-accent-cyan-400 transition-colors font-medium text-sm">
             GitHub
           </a>
         </div>
 
         {/* Mobile Toggle */}
-        <div
-          className="md:hidden text-white cursor-pointer text-2xl"
+        <button
+          className="md:hidden text-white cursor-pointer p-2 z-50 rounded-lg bg-accent-purple-900/20 border border-accent-purple-500/30"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
         >
-          ☰
-        </div>
+          {isMenuOpen ? (
+            <span className="text-2xl block w-6 text-center">✕</span>
+          ) : (
+            <span className="text-2xl block w-6 text-center">☰</span>
+          )}
+        </button>
       </div>
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="absolute top-[65px] left-0 w-full glass-card border-b border-accent-purple-500/30 p-5 flex flex-col gap-4 text-white md:hidden"
-        >
-          <Link href="#about" onClick={() => setIsMenuOpen(false)} className="hover:text-accent-cyan-400 transition-colors">About</Link>
-          <Link href="#skills" onClick={() => setIsMenuOpen(false)} className="hover:text-accent-cyan-400 transition-colors">Skills</Link>
-          <Link href="#projects" onClick={() => setIsMenuOpen(false)} className="hover:text-accent-cyan-400 transition-colors">Projects</Link>
-          <Link href="#experience" onClick={() => setIsMenuOpen(false)} className="hover:text-accent-cyan-400 transition-colors">Experience</Link>
-        </motion.div>
-      )}
-    </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "tween", duration: 0.3 }}
+            className="fixed inset-0 bg-[#0a0118] z-40 md:hidden flex flex-col items-center justify-center gap-8 p-10"
+          >
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsMenuOpen(false)}
+                className="text-2xl text-white font-bold hover:text-accent-cyan-400 transition-colors"
+              >
+                {link.name}
+              </Link>
+            ))}
+            <div className="flex flex-col gap-4 w-full mt-4">
+              <a
+                href="/resume.pdf"
+                download
+                className="w-full text-center py-4 bg-gradient-primary rounded-xl text-white font-bold"
+              >
+                Download Resume
+              </a>
+              <a
+                href="https://github.com/muhammadashraf23"
+                target="_blank"
+                rel="noreferrer"
+                className="w-full text-center py-4 border border-accent-purple-500/30 rounded-xl text-white font-bold"
+              >
+                GitHub Profile
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   );
 };
 
