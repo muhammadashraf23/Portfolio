@@ -50,23 +50,23 @@ export default function About() {
             </div>
           </AnimatedSection>
 
-          {/* Text Section */}
+          {/* Text Section / Quick Facts */}
           <AnimatedSection
             className="flex-1 text-center md:text-left"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gradient">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient">
               About Me
             </h2>
             <div className="space-y-4">
-              <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+              <p className="text-base md:text-xl text-gray-300 leading-relaxed">
                 Full Stack Developer with expertise in building scalable, high-performance web and mobile applications.
                 I specialize in modern JavaScript frameworks including React, Vue.js, Next.js, and Nuxt, combined with
                 robust backend solutions using Node.js and both SQL and NoSQL databases.
               </p>
-              <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+              <p className="text-base md:text-xl text-gray-300 leading-relaxed">
                 Currently pursuing BS in Computer Science at UBIT, University of Karachi, while actively working on
                 real-world projects that solve actual problems. I'm passionate about writing clean, maintainable code
                 and creating exceptional user experiences that make a difference.
@@ -74,16 +74,16 @@ export default function About() {
             </div>
 
             {/* Quick Facts Grid */}
-            <div className="grid grid-cols-2 gap-4 mt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mt-8">
               {quickFacts.map((fact, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-3 p-3 rounded-lg bg-accent-purple-900/20 border border-accent-purple-500/30 hover:border-accent-cyan-500/50 transition-colors"
+                  className="flex items-center gap-3 p-4 rounded-xl bg-accent-purple-900/10 border border-accent-purple-500/20 hover:border-accent-cyan-500/40 transition-all group/fact hover:bg-accent-purple-900/20"
                 >
-                  <span className="text-2xl" aria-hidden="true">{fact.icon}</span>
-                  <div>
-                    <span className="block text-xs text-gray-400 uppercase font-bold tracking-wider">{fact.label}</span>
-                    <span className="text-sm font-semibold text-white">{fact.value}</span>
+                  <span className="text-2xl filter drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]" aria-hidden="true">{fact.icon}</span>
+                  <div className="text-left">
+                    <span className="block text-[10px] text-gray-400 uppercase font-bold tracking-widest">{fact.label}</span>
+                    <span className="text-sm md:text-base font-semibold text-white group-hover/fact:text-accent-cyan-300 transition-colors">{fact.value}</span>
                   </div>
                 </div>
               ))}

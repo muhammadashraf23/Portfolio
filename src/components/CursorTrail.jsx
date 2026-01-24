@@ -14,6 +14,10 @@ export default function CursorTrail() {
     ];
 
     useEffect(() => {
+        // Disable trail on mobile/touch devices for better performance
+        const isMobile = window.innerWidth < 768 || ('ontouchstart' in window);
+        if (isMobile) return;
+
         const handleMouseMove = (e) => {
             const newParticle = {
                 id: nextId.current++,

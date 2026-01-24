@@ -16,7 +16,7 @@ const SkillsSection = () => {
           Skills & Technologies
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-items-center max-w-6xl mx-auto">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 md:gap-6 justify-items-center max-w-6xl mx-auto">
           {skills.map((skill, index) => (
             <AnimatedSection
               key={skill.name}
