@@ -40,7 +40,7 @@ export default function About() {
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-accent-purple-500 to-accent-cyan-500 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
               <Image
-                src="/images/Profile picture.png"
+                src="/images/profile_photo.png"
                 alt="Muhammad Ashraf Profile"
                 width={288}
                 height={288}
