@@ -2,13 +2,22 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import AnimatedSection from "./AnimatedSection";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Form submission logic would go here
+    console.log("Form submitted:", formData);
+    alert("Message sent successfully!");
+  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -52,7 +61,7 @@ const Contact = () => {
           {/* Contact Form */}
           <AnimatedSection
             initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            whileInView={{ x: 0, opacity: 1 }}
             className="glass-card p-6 md:p-8 rounded-3xl shadow-glow-purple order-2 lg:order-1"
           >
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
@@ -115,7 +124,7 @@ const Contact = () => {
           <div className="flex flex-col gap-6 md:gap-8 order-1 lg:order-2 px-2 md:px-0">
             <AnimatedSection
               initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
+              whileInView={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
               <div className="space-y-4 md:space-y-6">
@@ -139,7 +148,7 @@ const Contact = () => {
 
             <AnimatedSection
               initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
+              whileInView={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.4 }}
               className="mt-4"
             >

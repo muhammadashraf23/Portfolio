@@ -34,7 +34,7 @@ export default function About() {
           <AnimatedSection
             className="flex-shrink-0"
             initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
             <div className="relative group">
@@ -54,7 +54,7 @@ export default function About() {
           <AnimatedSection
             className="flex-1 text-center md:text-left"
             initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient">
