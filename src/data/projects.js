@@ -1,9 +1,9 @@
 export const projects = [
   {
-    title: "AI-Powered Financial Ledger",
+    title: "WhatsApp Ledger System",
     description:
-      "A sophisticated financial management system featuring automated WhatsApp message parsing and intelligent categorization. Built to consolidate customer profiles, track real-time outstanding balances, and provide actionable business insights through a premium dashboard.",
-    technologies: ["Next.js", "Firebase", "WhatsApp API", "Framer Motion"],
+      "A fast, rule-based ledger system converting WhatsApp messages into structured records. Features automated weekly/monthly reporting, person-wise balance tracking, and secure admin management.",
+    technologies: ["Next.js", "Firebase", "TypeScript", "TailwindCSS"],
     liveDemo: "#",
     github: "https://github.com/MuhammadAshraf23",
     image: "/images/projects/ledger.png",
