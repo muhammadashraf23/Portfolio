@@ -1,5 +1,14 @@
 export const projects = [
   {
+    title: "AI-Powered Financial Ledger",
+    description:
+      "A sophisticated financial management system featuring automated WhatsApp message parsing and intelligent categorization. Built to consolidate customer profiles, track real-time outstanding balances, and provide actionable business insights through a premium dashboard.",
+    technologies: ["Next.js", "Firebase", "WhatsApp API", "Framer Motion"],
+    liveDemo: "#",
+    github: "https://github.com/MuhammadAshraf23",
+    image: "/images/projects/ledger.png",
+  },
+  {
     title: "Baltistan Baking Store",
     description:
       "A premium e-commerce experience built for a baking and grocery brand. Features dynamic cart management, secure checkout, and a sleek, high-conversion UI design.",
@@ -35,15 +44,15 @@ export const projects = [
     github: "https://github.com/MuhammadAshraf23/attendence-app",
     image: "/images/projects/attendance.PNG",
   },
-  {
-    title: "Internee.pk Clone",
-    description:
-      "A refined internship portal connecting students with industry opportunities. Focuses on user-centric dashboard design and seamless application workflows.",
-    technologies: ["React", "MUI", "Framer Motion"],
-    liveDemo: "https://ashraf-interneepk.netlify.app/",
-    github: "https://github.com/MuhammadAshraf23/Internee.pk",
-    image: "/images/projects/internee.png",
-  },
+  // {
+  //   title: "Internee.pk Clone",
+  //   description:
+  //     "A refined internship portal connecting students with industry opportunities. Focuses on user-centric dashboard design and seamless application workflows.",
+  //   technologies: ["React", "MUI", "Framer Motion"],
+  //   liveDemo: "https://ashraf-interneepk.netlify.app/",
+  //   github: "https://github.com/MuhammadAshraf23/Internee.pk",
+  //   image: "/images/projects/internee.png",
+  // },
   {
     title: "Modern Portfolio",
     description:
