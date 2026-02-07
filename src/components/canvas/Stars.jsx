@@ -4,20 +4,19 @@ import { useState, useRef, Suspense, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 
+// Pre-calculate star positions to avoid computation overhead on mount
+const starPositions = (() => {
+    const count = 5000;
+    const positions = new Float32Array(count * 3);
+    for (let i = 0; i < positions.length; i++) {
+        const val = (Math.random() - 0.5) * 25;
+        positions[i] = isNaN(val) ? 0 : val;
+    }
+    return positions;
+})();
+
 const StarBackground = (props) => {
     const ref = useRef();
-
-    // Use useMemo for better performance and stability
-    const sphere = useMemo(() => {
-        const count = 5000;
-        const positions = new Float32Array(count * 3);
-        for (let i = 0; i < positions.length; i++) {
-            const val = (Math.random() - 0.5) * 25;
-            // Immediate check for NaN as a precaution
-            positions[i] = isNaN(val) ? 0 : val;
-        }
-        return positions;
-    }, []);
 
     useFrame((state, delta) => {
         if (ref.current) {
@@ -30,7 +29,7 @@ const StarBackground = (props) => {
         <group rotation={[0, 0, Math.PI / 4]}>
             <Points
                 ref={ref}
-                positions={sphere}
+                positions={starPositions}
                 stride={3}
                 frustumCulled={false}
                 {...props}

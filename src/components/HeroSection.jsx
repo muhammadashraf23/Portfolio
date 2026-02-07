@@ -8,7 +8,7 @@ export default function HeroSection() {
     <div className="relative flex flex-col h-full w-full" id="about">
 
       {/* Full Screen 3D Background */}
-      <div className="absolute top-0 left-0 w-full h-full z-[0]">
+      <div className="absolute top-0 left-0 w-full h-full z-[0] bg-[#030014]/50">
         <Scene />
       </div>
 
@@ -18,9 +18,9 @@ export default function HeroSection() {
         {/* Text Section - Centered and Interactive */}
         <div className="flex flex-col gap-4 md:gap-5 justify-center items-center text-center w-full max-w-[900px] pointer-events-auto">
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3 }}
             className="py-[6px] px-[12px] md:py-[8px] md:px-[10px] border border-accent-purple-500/50 opacity-[0.9] rounded-full w-fit glass-container"
           >
             <span className="text-gray-300 text-xs md:text-sm font-medium">
@@ -29,9 +29,9 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="flex flex-col gap-3 md:gap-6 mt-4 md:mt-6 text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1] tracking-tight"
           >
             <span>
@@ -43,9 +43,9 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
             className="text-base md:text-xl text-gray-400 my-4 md:my-5 max-w-[700px] leading-relaxed px-2 md:px-0"
           >
             I build modern, scalable web and mobile applications using cutting-edge technologies.
@@ -53,9 +53,9 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             className="flex gap-3 md:gap-4 flex-wrap justify-center mt-2"
           >
             <a
@@ -77,7 +77,7 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 1 }}
+          transition={{ duration: 0.4, delay: 0.5 }}
           className="absolute bottom-6 left-1/2 transform -translate-x-1/2 pointer-events-auto"
         >
           <a href="#about" className="flex flex-col items-center gap-2 group">
