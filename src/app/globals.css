@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -61,6 +63,31 @@ body {
     border: 2px solid rgba(168, 85, 247, 0.3);
 }
 
+.glass-pill {
+    background: rgba(10, 1, 24, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.2), inset 0 0 15px rgba(168, 85, 247, 0.1);
+    border-radius: 9999px;
+}
+
+.glass-skill-card {
+    background: rgba(20, 10, 40, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05), inset 0 0 20px rgba(168, 85, 247, 0.15), 0 4px 10px rgba(0,0,0,0.5);
+    border-radius: 16px;
+}
+
+/* Glow Utilities */
+.text-glow-purple {
+    text-shadow: 0 0 15px rgba(168, 85, 247, 0.8), 0 0 25px rgba(168, 85, 247, 0.4), 0 0 35px rgba(168, 85, 247, 0.2);
+}
+
+.text-glow-cyan {
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.8), 0 0 20px rgba(6, 182, 212, 0.4), 0 0 30px rgba(6, 182, 212, 0.2);
+}
+
 /* Gradient Utilities */
 .text-gradient {
     background: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%);
@@ -89,4 +116,26 @@ body {
     height: 1px;
     background: linear-gradient(90deg, transparent 0%, rgba(168, 85, 247, 0.5) 50%, transparent 100%);
     margin: 2rem 0;
+}
+
+.font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Cyber Geometric Background */
+.bg-cyber-grid {
+    background-image: 
+        linear-gradient(rgba(108, 36, 182, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(168, 85, 247, 0.2) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: perspective(600px) rotateX(60deg) scale(2);
+    transform-origin: top center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    mask-image: radial-gradient(circle at center 30%, black 10%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at center 30%, black 10%, transparent 80%);
 }
