@@ -19,13 +19,14 @@ html,
 body {
     height: 100%;
     width: 100%;
-    background-color: #050505;
+    background: #e8e6e3;
+    background-attachment: fixed;
     overflow-x: hidden;
-    color: #fff;
+    color: #0a0a0a;
     font-family: var(--font-inter), sans-serif;
 }
 
-/* Cinematic Noise Overlay */
+/* Cinematic Noise Overlay for Light Mode */
 .noise-overlay {
   position: fixed;
   top: 0;
@@ -34,20 +35,20 @@ body {
   height: 100vh;
   pointer-events: none;
   z-index: 9998;
-  opacity: 0.08;
+  opacity: 0.14; /* Higher opacity for light background */
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  mix-blend-mode: overlay;
+  mix-blend-mode: multiply; /* Crucial: dark specks on light background */
 }
 
 /* Custom Selection */
 ::selection {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #0a0a0a;
+    color: #ffffff;
 }
 
 ::-moz-selection {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #0a0a0a;
+    color: #ffffff;
 }
 
 /* Custom Scrollbar */
@@ -66,25 +67,25 @@ body {
 
 /* Cinematic UI Elements */
 .glass-container {
-    background: rgba(10, 10, 10, 0.8);
+    background: rgba(240, 240, 240, 0.5);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .glass-card {
-    background: rgba(15, 15, 15, 0.7);
+    background: rgba(245, 245, 245, 0.6);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     transition: border 0.3s ease;
 }
 .glass-card:hover {
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .glass-pill {
-    background: rgba(20, 20, 20, 0.8);
+    background: rgba(245, 245, 245, 0.85);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 9999px;
 }
 
@@ -93,7 +94,7 @@ body {
 /* Section Divider */
 .section-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
     margin: 2rem 0;
 }
 
@@ -104,9 +105,9 @@ body {
 /* Stark Brutalist Structural Background */
 .bg-cyber-grid {
     background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 50px 50px;
+        linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
     transform: perspective(600px) rotateX(60deg) scale(2);
     transform-origin: top center;
     position: absolute;

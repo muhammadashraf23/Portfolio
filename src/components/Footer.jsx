@@ -6,7 +6,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative z-20 py-12 text-white overflow-hidden">
+    <footer className="relative z-20 py-12 text-[#0a0a0a] overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-t from-accent-purple-900/30 via-background to-background z-0" />
 
@@ -24,7 +24,7 @@ const Footer = () => {
               />
               <span className="font-bold text-xl text-gradient">Muhammad Ashraf</span>
             </div>
-            <p className="text-gray-400 text-sm text-center md:text-left">
+            <p className="text-zinc-600 text-sm text-center md:text-left">
               Full Stack Developer specializing in MERN stack and modern web technologies.
             </p>
           </div>
@@ -32,7 +32,7 @@ const Footer = () => {
           {/* Quick Links */}
           <div className="flex flex-col items-center">
             <h3 className="font-bold text-lg mb-4 text-gradient-secondary">Quick Links</h3>
-            <div className="flex flex-col gap-2 text-gray-400">
+            <div className="flex flex-col gap-2 text-zinc-600">
               <a href="#about" className="hover:text-accent-cyan-400 transition-colors">About</a>
               <a href="#skills" className="hover:text-accent-cyan-400 transition-colors">Skills</a>
               <a href="#projects" className="hover:text-accent-cyan-400 transition-colors">Projects</a>
@@ -77,7 +77,7 @@ const Footer = () => {
         <div className="section-divider my-8" />
 
         {/* Copyright */}
-        <div className="text-center text-gray-400 text-sm">
+        <div className="text-center text-zinc-600 text-sm">
           <p>© {currentYear} Muhammad Ashraf. All rights reserved.</p>
           <p className="mt-2">Built with Next.js, React Three Fiber & Tailwind CSS</p>
         </div>

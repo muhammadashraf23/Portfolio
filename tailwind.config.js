@@ -8,21 +8,21 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                background: "#050505",
-                foreground: "#ffffff",
-                primary: "#111111",
-                secondary: "#ffffff",
+                background: "#e8e6e3",
+                foreground: "#0a0a0a",
+                primary: "#f5f5f5",
+                secondary: "#0a0a0a",
                 tertiary: "#111111",
                 "black-100": "#0a0a0a",
                 "black-200": "#050505",
                 "white-100": "#f3f3f3",
                 // Enhanced accent colors
                 "accent-purple": {
-                    50: "#ffffff",
-                    100: "#f5f5f5",
-                    200: "#e5e5e5",
-                    300: "#d4d4d4",
-                    400: "#a3a3a3",
+                    50: "#050505",
+                    100: "#111111",
+                    200: "#1a1a1a",
+                    300: "#262626",
+                    400: "#404040",
                     500: "#737373",
                     600: "#525252",
                     700: "#404040",
@@ -30,11 +30,11 @@ module.exports = {
                     900: "#171717",
                 },
                 "accent-cyan": {
-                    50: "#ffffff",
-                    100: "#f5f5f5",
-                    200: "#e5e5e5",
-                    300: "#d4d4d4",
-                    400: "#a3a3a3",
+                    50: "#050505",
+                    100: "#111111",
+                    200: "#1a1a1a",
+                    300: "#262626",
+                    400: "#404040",
                     500: "#737373",
                     600: "#525252",
                     700: "#404040",
@@ -55,8 +55,8 @@ module.exports = {
             backgroundImage: {
                 "hero-pattern": "url('/herobg.png')",
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-                "gradient-primary": "linear-gradient(135deg, #111111 0%, #222222 100%)",
-                "gradient-secondary": "linear-gradient(135deg, #222222 0%, #333333 100%)",
+                "gradient-primary": "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)",
+                "gradient-secondary": "linear-gradient(135deg, #1f1f1f 0%, #333333 100%)",
             },
             animation: {
                 "spin-slow": "spin 20s linear infinite",

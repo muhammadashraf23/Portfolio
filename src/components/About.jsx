@@ -15,7 +15,7 @@ export default function About() {
     <section
       id="about"
       aria-label="About Muhammad Ashraf"
-      className="min-h-screen flex flex-col justify-center items-center px-6 md:px-20 py-20 text-white relative z-20 overflow-hidden"
+      className="min-h-screen flex flex-col justify-center items-center px-6 md:px-20 py-20 text-[#0a0a0a] relative z-20 overflow-hidden"
     >
       {/* Elegant Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent-purple-900/20 via-background to-accent-cyan-900/20 z-0" />
@@ -61,12 +61,12 @@ export default function About() {
               About Me
             </h2>
             <div className="space-y-4">
-              <p className="text-base md:text-xl text-gray-300 leading-relaxed">
+              <p className="text-base md:text-xl text-zinc-700 leading-relaxed">
                 Full Stack Developer with expertise in building scalable, high-performance web and mobile applications.
                 I specialize in modern JavaScript frameworks including React, Vue.js, Next.js, and Nuxt, combined with
                 robust backend solutions using Node.js and both SQL and NoSQL databases.
               </p>
-              <p className="text-base md:text-xl text-gray-300 leading-relaxed">
+              <p className="text-base md:text-xl text-zinc-700 leading-relaxed">
                 Currently pursuing BS in Computer Science at UBIT, University of Karachi, while actively working on
                 real-world projects that solve actual problems. I'm passionate about writing clean, maintainable code
                 and creating exceptional user experiences that make a difference.
@@ -82,8 +82,8 @@ export default function About() {
                 >
                   <span className="text-2xl filter drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]" aria-hidden="true">{fact.icon}</span>
                   <div className="text-left">
-                    <span className="block text-[10px] text-gray-400 uppercase font-bold tracking-widest">{fact.label}</span>
-                    <span className="text-sm md:text-base font-semibold text-white group-hover/fact:text-accent-cyan-300 transition-colors">{fact.value}</span>
+                    <span className="block text-[10px] text-zinc-600 uppercase font-bold tracking-widest">{fact.label}</span>
+                    <span className="text-sm md:text-base font-semibold text-[#0a0a0a] group-hover/fact:text-accent-cyan-300 transition-colors">{fact.value}</span>
                   </div>
                 </div>
               ))}

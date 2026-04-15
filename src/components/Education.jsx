@@ -39,7 +39,7 @@ const Education = () => {
                     <h3 className="text-xl md:text-3xl font-bold text-gradient-secondary mb-3">
                       {item.degree || item.certification}
                     </h3>
-                    <p className="text-gray-400 text-base md:text-xl mb-4 font-semibold">
+                    <p className="text-zinc-600 text-base md:text-xl mb-4 font-semibold">
                       {item.institution || item.provider}
                     </p>
                   </div>

@@ -16,7 +16,7 @@ export default function HeroSection() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <div ref={containerRef} className="relative flex flex-col h-full w-full bg-[#050014] overflow-hidden" id="about">
+    <div ref={containerRef} className="relative flex flex-col h-full w-full bg-transparent overflow-hidden" id="about">
 
       {/* Cyber Grid Pattern Background */}
       <div className="bg-cyber-grid pointer-events-none opacity-60"></div>
@@ -54,10 +54,10 @@ export default function HeroSection() {
                 transition: { staggerChildren: 0.08, delayChildren: 0.2 }
               }
             }}
-            className="text-center font-black text-white leading-[0.95] mb-8 uppercase md:tracking-wider font-orbitron"
+            className="text-center font-black text-[#0a0a0a] leading-[0.95] mb-8 uppercase md:tracking-wider font-orbitron"
           >
             <h1 className="flex flex-col items-center justify-center text-[13vw] sm:text-[11vw] md:text-[9vw] lg:text-[7.5vw]">
-              <div className="flex">
+              <div className="flex text-[#0a0a0a]">
                 {"HI, I'M".split("").map((char, index) => (
                   <motion.span
                     key={`hi-${index}`}
@@ -73,7 +73,7 @@ export default function HeroSection() {
                 ))}
               </div>
               
-              <div className="flex text-white mix-blend-difference">
+              <div className="flex text-[#0a0a0a]">
                 {"MUHAMMAD".split("").map((char, index) => (
                   <motion.span
                     key={`muhammad-${index}`}
@@ -89,7 +89,7 @@ export default function HeroSection() {
                 ))}
               </div>
 
-              <div className="flex mt-[-1vw] text-white mix-blend-difference">
+              <div className="flex mt-[-1vw] text-[#0a0a0a]">
                 {"ASHRAF".split("").map((char, index) => (
                   <motion.span
                     key={`ashraf-${index}`}
@@ -108,7 +108,7 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Description */}
-          <p className="text-gray-300 text-center max-w-[700px] text-sm md:text-base lg:text-lg mb-10 leading-relaxed px-4 opacity-90 drop-shadow-md z-[30]">
+          <p className="text-zinc-700 text-center max-w-[700px] text-sm md:text-base lg:text-lg mb-10 leading-relaxed px-4 font-medium z-[30]">
             Building the future of digital experiences. Specialized in highly scalable architectures, 
             interactive full-stack applications, and premium WebGL integrations.
           </p>
@@ -120,20 +120,20 @@ export default function HeroSection() {
             <MagneticButton>
               <a
                 href="#contact"
-                className="relative overflow-hidden group bg-white text-black px-8 py-3.5 md:px-10 md:py-4 rounded-none font-bold text-sm block transition-transform border border-white"
+                className="relative overflow-hidden group bg-[#0a0a0a] text-white px-8 py-3.5 md:px-10 md:py-4 rounded-none font-bold text-sm block transition-transform border border-[#0a0a0a]"
               >
                 <span className="absolute inset-0 w-full h-full bg-[#ff3300] opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                <span className="relative z-10 group-hover:text-white transition-colors">GET IN TOUCH</span>
+                <span className="relative z-10 text-white transition-colors">GET IN TOUCH</span>
               </a>
             </MagneticButton>
             
             <MagneticButton>
               <a
                 href="#projects"
-                className="relative overflow-hidden group border border-zinc-700 bg-transparent text-gray-300 px-8 py-3.5 md:px-10 md:py-4 rounded-none font-bold text-sm block hover:text-white transition-colors hover:border-white"
+                className="relative overflow-hidden group border border-[#0a0a0a] bg-transparent text-[#0a0a0a] px-8 py-3.5 md:px-10 md:py-4 rounded-none font-bold text-sm block transition-colors"
               >
-                <span className="absolute inset-0 w-full h-full bg-white opacity-0 group-hover:opacity-10 transition-opacity"></span>
-                <span className="relative z-10">VIEW PROJECTS</span>
+                <span className="absolute inset-0 w-full h-full bg-[#0a0a0a] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                <span className="relative z-10 group-hover:text-white transition-colors">VIEW PROJECTS</span>
               </a>
             </MagneticButton>
           </div>

@@ -40,17 +40,18 @@ export default function InteractiveGeometry() {
           temporalDistortion={0.2}
           clearcoat={1}
           clearcoatRoughness={0.1}
-          transmission={1}
-          roughness={0.05}
-          ior={1.5}
+          color="#3f3f46" // Dense dark zinc glass
+          transmission={0.9}
+          roughness={0.1}
+          ior={1.8}
         />
         
-        {/* Stark white edges to catch light */}
+        {/* Dark edges to catch shadow */}
         <Edges
-          linewidth={1}
+          linewidth={2}
           threshold={15} 
-          color="#ffffff" 
-          opacity={0.3}
+          color="#0a0a0a" 
+          opacity={0.5}
           transparent
         />
       </mesh>

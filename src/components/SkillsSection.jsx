@@ -6,7 +6,7 @@ import { skills } from "@/data/skills";
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-20 text-white relative z-20 overflow-hidden">
+    <section id="skills" className="py-20 text-[#0a0a0a] relative z-20 overflow-hidden">
       {/* Elegant Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan-900/20 via-background to-accent-purple-900/20 z-0" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(6,182,212,0.15),transparent_50%)] z-0" />

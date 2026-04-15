@@ -42,11 +42,11 @@ const Experience = () => {
                     {experience.title}
                   </h3>
                   <div className="flex flex-row items-center gap-4 mb-4">
-                    <span className="px-3 py-1.5 md:px-4 md:py-2 bg-gradient-secondary text-white font-bold rounded-lg text-xs md:text-sm">
+                    <span className="px-3 py-1.5 md:px-4 md:py-2 bg-gradient-secondary text-[#0a0a0a] font-bold rounded-lg text-xs md:text-sm">
                       {experience.company}
                     </span>
                   </div>
-                  <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+                  <p className="text-zinc-700 text-sm md:text-base leading-relaxed">
                     {experience.description}
                   </p>
                 </div>

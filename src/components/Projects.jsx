@@ -5,7 +5,7 @@ import { projects } from "@/data/projects";
 
 const Projects = () => {
   return (
-    <section id="projects" aria-label="Selected Projects" className="py-20 text-white relative z-20 overflow-hidden">
+    <section id="projects" aria-label="Selected Projects" className="py-20 text-[#0a0a0a] relative z-20 overflow-hidden">
       {/* Elegant Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent-purple-900/20 via-background to-accent-cyan-900/20 z-0" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.1),transparent_50%)] z-0" />
@@ -41,7 +41,7 @@ const Projects = () => {
                     <h3 className="text-2xl font-bold mb-3 text-gradient-secondary">
                       {project.title}
                     </h3>
-                    <p className="text-gray-300 mb-4 text-sm leading-relaxed">
+                    <p className="text-zinc-700 mb-4 text-sm leading-relaxed">
                       {project.description}
                     </p>
 
@@ -68,7 +68,7 @@ const Projects = () => {
                         href={project.liveDemo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 px-4 py-2 bg-gradient-primary hover:opacity-90 text-white font-bold rounded-lg text-sm shadow-glow-purple transition-all hover:scale-105 text-center"
+                        className="flex-1 px-4 py-2 bg-gradient-primary hover:opacity-90 text-[#0a0a0a] font-bold rounded-lg text-sm shadow-glow-purple transition-all hover:scale-105 text-center"
                       >
                         Live Demo
                       </a>
@@ -76,7 +76,7 @@ const Projects = () => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 px-4 py-2 border-2 border-accent-purple-500/50 hover:bg-accent-purple-900/10 hover:border-accent-cyan-500 text-white rounded-lg text-sm transition-all hover:scale-105 text-center font-semibold"
+                        className="flex-1 px-4 py-2 border-2 border-accent-purple-500/50 hover:bg-accent-purple-900/10 hover:border-accent-cyan-500 text-[#0a0a0a] rounded-lg text-sm transition-all hover:scale-105 text-center font-semibold"
                       >
                         Source
                       </a>

@@ -37,7 +37,7 @@ const Navbar = () => {
               className="cursor-pointer rounded-full relative z-10 md:w-[38px] md:h-[38px]"
             />
           </div>
-          <div className="font-bold ml-3 text-white/95 group-hover:text-accent-cyan transition-colors whitespace-nowrap hidden sm:flex flex-col font-orbitron text-xs md:text-sm leading-tight tracking-wider">
+          <div className="font-bold ml-3 text-[#0a0a0a]/95 group-hover:text-accent-cyan transition-colors whitespace-nowrap hidden sm:flex flex-col font-orbitron text-xs md:text-sm leading-tight tracking-wider">
             <span>Muhammad</span>
             <span>Ashraf</span>
           </div>
@@ -55,7 +55,7 @@ const Navbar = () => {
                   target={link.name === "GitHub" ? "_blank" : undefined}
                   rel={link.name === "GitHub" ? "noreferrer" : undefined}
                   download={link.name === "Resume"}
-                  className="cursor-pointer hover:text-white transition-colors text-xs lg:text-sm px-4 py-2 text-gray-300 font-medium tracking-wide hover:drop-shadow-[0_0_5px_rgba(255,255,255,0.8)]"
+                  className="cursor-pointer hover:text-[#0a0a0a] transition-colors text-xs lg:text-sm px-4 py-2 text-zinc-700 font-medium tracking-wide hover:drop-shadow-[0_0_5px_rgba(255,255,255,0.8)]"
                 >
                   {link.name}
                 </a>
@@ -67,8 +67,8 @@ const Navbar = () => {
                 href={link.href}
                 className={`cursor-pointer transition-all text-xs lg:text-sm px-5 py-2 rounded-full font-medium tracking-wide ${
                   isActive
-                    ? "bg-gradient-to-r from-[#6b21a8] to-[#9333ea] text-white shadow-[0_4px_15px_rgba(168,85,247,0.5)] border border-[#a855f7]/50"
-                    : "text-gray-300 hover:text-white hover:drop-shadow-[0_0_5px_rgba(255,255,255,0.8)]"
+                    ? "bg-gradient-to-r from-[#6b21a8] to-[#9333ea] text-[#0a0a0a] shadow-[0_4px_15px_rgba(168,85,247,0.5)] border border-[#a855f7]/50"
+                    : "text-zinc-700 hover:text-[#0a0a0a] hover:drop-shadow-[0_0_5px_rgba(255,255,255,0.8)]"
                 }`}
               >
                 {link.name}
@@ -79,7 +79,7 @@ const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white cursor-pointer p-2 z-50 rounded-full bg-white/5 border border-white/10"
+          className="md:hidden text-[#0a0a0a] cursor-pointer p-2 z-50 rounded-full bg-white/5 border border-black/10"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -112,7 +112,7 @@ const Navbar = () => {
                       target={link.name === "GitHub" ? "_blank" : undefined}
                       rel={link.name === "GitHub" ? "noreferrer" : undefined}
                       download={link.name === "Resume"}
-                      className="text-base font-orbitron tracking-widest text-gray-300 hover:text-white transition-colors py-3 border-b border-white/5 text-center"
+                      className="text-base font-orbitron tracking-widest text-zinc-700 hover:text-[#0a0a0a] transition-colors py-3 border-b border-black/5 text-center"
                     >
                       {link.name}
                     </a>
@@ -123,7 +123,7 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`text-base font-orbitron tracking-widest transition-colors py-3 border-b border-white/5 text-center rounded-lg ${isActive ? 'bg-[#9333ea]/20 text-white' : 'text-gray-300 hover:text-white'}`}
+                  className={`text-base font-orbitron tracking-widest transition-colors py-3 border-b border-black/5 text-center rounded-lg ${isActive ? 'bg-[#9333ea]/20 text-[#0a0a0a]' : 'text-zinc-700 hover:text-[#0a0a0a]'}`}
                 >
                   {link.name}
                 </Link>

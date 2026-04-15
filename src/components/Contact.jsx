@@ -37,7 +37,7 @@ const Contact = () => {
   return (
     <motion.section
       id="contact"
-      className="py-20 text-white relative z-20 overflow-hidden"
+      className="py-20 text-[#0a0a0a] relative z-20 overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -50,7 +50,7 @@ const Contact = () => {
         <h2 className="text-4xl md:text-6xl font-bold text-center mb-6 text-gradient">
           Get In Touch
         </h2>
-        <p className="text-center text-gray-400 mb-4 max-w-2xl mx-auto text-base md:text-lg">
+        <p className="text-center text-zinc-600 mb-4 max-w-2xl mx-auto text-base md:text-lg">
           Have a project in mind or want to collaborate? Feel free to reach out!
         </p>
         <p className="text-center text-accent-cyan-400 mb-10 md:mb-16 text-xs md:text-sm font-medium uppercase tracking-widest">
@@ -67,53 +67,53 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2 px-1">Full Name</label>
+                  <label htmlFor="name" className="block text-sm font-medium text-zinc-600 mb-2 px-1">Full Name</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     required
-                    className="w-full bg-background border-2 border-accent-purple-500/30 rounded-xl px-4 py-3 focus:outline-none focus:border-accent-cyan-500 transition-colors text-white"
+                    className="w-full bg-background border-2 border-accent-purple-500/30 rounded-xl px-4 py-3 focus:outline-none focus:border-accent-cyan-500 transition-colors text-[#0a0a0a]"
                     placeholder="John Doe"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2 px-1">Email Address</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-zinc-600 mb-2 px-1">Email Address</label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     required
-                    className="w-full bg-background border-2 border-accent-purple-500/30 rounded-xl px-4 py-3 focus:outline-none focus:border-accent-cyan-500 transition-colors text-white"
+                    className="w-full bg-background border-2 border-accent-purple-500/30 rounded-xl px-4 py-3 focus:outline-none focus:border-accent-cyan-500 transition-colors text-[#0a0a0a]"
                     placeholder="john@example.com"
                   />
                 </div>
               </div>
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-400 mb-2 px-1">Subject</label>
+                <label htmlFor="subject" className="block text-sm font-medium text-zinc-600 mb-2 px-1">Subject</label>
                 <input
                   type="text"
                   id="subject"
                   name="subject"
                   required
-                  className="w-full bg-background border-2 border-accent-purple-500/30 rounded-xl px-4 py-2 md:py-3 focus:outline-none focus:border-accent-cyan-500 transition-colors text-white"
+                  className="w-full bg-background border-2 border-accent-purple-500/30 rounded-xl px-4 py-2 md:py-3 focus:outline-none focus:border-accent-cyan-500 transition-colors text-[#0a0a0a]"
                   placeholder="How can I help you?"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2 px-1">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium text-zinc-600 mb-2 px-1">Message</label>
                 <textarea
                   id="message"
                   name="message"
                   required
                   rows="4"
-                  className="w-full bg-background border-2 border-accent-purple-500/30 rounded-xl px-4 py-3 focus:outline-none focus:border-accent-cyan-500 transition-colors text-white resize-none"
+                  className="w-full bg-background border-2 border-accent-purple-500/30 rounded-xl px-4 py-3 focus:outline-none focus:border-accent-cyan-500 transition-colors text-[#0a0a0a] resize-none"
                   placeholder="Your message here..."
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full py-4 bg-gradient-primary text-white font-bold rounded-xl shadow-glow-purple hover:shadow-glow-cyan transition-all hover:scale-[1.02] active:scale-95"
+                className="w-full py-4 bg-gradient-primary text-[#0a0a0a] font-bold rounded-xl shadow-glow-purple hover:shadow-glow-cyan transition-all hover:scale-[1.02] active:scale-95"
               >
                 Send Message
               </button>
@@ -135,11 +135,11 @@ const Contact = () => {
                     className="flex items-center gap-4 md:gap-6 p-4 md:p-6 glass-card rounded-2xl border-transparent hover:border-accent-cyan-500 hover:shadow-glow-cyan transition-all group"
                   >
                     <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow-purple group-hover:scale-110 transition-transform">
-                      <item.icon className="text-xl md:text-2xl text-white" />
+                      <item.icon className="text-xl md:text-2xl text-[#0a0a0a]" />
                     </div>
                     <div>
-                      <p className="text-xs md:text-sm text-gray-400 font-bold uppercase tracking-wider">{item.label}</p>
-                      <p className="text-sm md:text-lg font-semibold text-white group-hover:text-accent-cyan-400 transition-colors break-words">{item.value}</p>
+                      <p className="text-xs md:text-sm text-zinc-600 font-bold uppercase tracking-wider">{item.label}</p>
+                      <p className="text-sm md:text-lg font-semibold text-[#0a0a0a] group-hover:text-accent-cyan-400 transition-colors break-words">{item.value}</p>
                     </div>
                   </a>
                 ))}
@@ -160,7 +160,7 @@ const Contact = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 md:w-16 md:h-16 rounded-2xl glass-card flex items-center justify-center border-accent-purple-500/30 hover:border-accent-cyan-500 hover:shadow-glow-cyan transition-all hover:scale-110 text-white hover:text-accent-cyan-400 shadow-glow-purple"
+                    className="w-12 h-12 md:w-16 md:h-16 rounded-2xl glass-card flex items-center justify-center border-accent-purple-500/30 hover:border-accent-cyan-500 hover:shadow-glow-cyan transition-all hover:scale-110 text-[#0a0a0a] hover:text-accent-cyan-400 shadow-glow-purple"
                     aria-label={social.label}
                   >
                     <social.icon className="text-xl md:text-2xl" />
