@@ -44,7 +44,7 @@ const Contact = () => {
     >
       {/* Elegant Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan-900/20 via-background to-accent-purple-900/20 z-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.15),transparent_50%)] z-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.03),transparent_50%)] z-0" />
 
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl md:text-6xl font-bold text-center mb-6 text-gradient">

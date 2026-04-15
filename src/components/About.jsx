@@ -19,8 +19,8 @@ export default function About() {
     >
       {/* Elegant Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent-purple-900/20 via-background to-accent-cyan-900/20 z-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(168,85,247,0.1),transparent_50%)] z-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(6,182,212,0.1),transparent_50%)] z-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,0,0,0.03),transparent_50%)] z-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(0,0,0,0.02),transparent_50%)] z-0" />
 
       {/* Content Container */}
       <article className="max-w-6xl w-full p-8 md:p-12 glass-card rounded-3xl shadow-glow-purple relative z-10">
@@ -80,7 +80,7 @@ export default function About() {
                   key={index}
                   className="flex items-center gap-3 p-4 rounded-xl bg-accent-purple-900/10 border border-accent-purple-500/20 hover:border-accent-cyan-500/40 transition-all group/fact hover:bg-accent-purple-900/20"
                 >
-                  <span className="text-2xl filter drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]" aria-hidden="true">{fact.icon}</span>
+                  <span className="text-2xl filter drop-shadow-[0_0_8px_rgba(0,0,0,0.03)]" aria-hidden="true">{fact.icon}</span>
                   <div className="text-left">
                     <span className="block text-[10px] text-zinc-600 uppercase font-bold tracking-widest">{fact.label}</span>
                     <span className="text-sm md:text-base font-semibold text-[#0a0a0a] group-hover/fact:text-accent-cyan-300 transition-colors">{fact.value}</span>

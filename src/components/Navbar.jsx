@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <div className="fixed top-8 w-full flex justify-center z-[100] px-4 pointer-events-none">
       {/* Outer rounded container exactly matching the image */}
-      <nav className="pointer-events-auto h-[55px] md:h-[65px] glass-pill flex items-center justify-between px-4 md:px-8 w-full max-w-[850px] border border-[#a855f7]/30 shadow-[0_0_20px_rgba(168,85,247,0.15),inset_0_0_15px_rgba(168,85,247,0.1)] rounded-full bg-[#0a0118]/80 backdrop-blur-xl">
+      <nav className="pointer-events-auto h-[55px] md:h-[65px] glass-pill flex items-center justify-between px-4 md:px-8 w-full max-w-[850px] border border-[#0a0a0a]/30 shadow-none rounded-full bg-[#f0f0f0]/80 backdrop-blur-xl">
         
         {/* Logo Section */}
         <Link
@@ -67,7 +67,7 @@ const Navbar = () => {
                 href={link.href}
                 className={`cursor-pointer transition-all text-xs lg:text-sm px-5 py-2 rounded-full font-medium tracking-wide ${
                   isActive
-                    ? "bg-gradient-to-r from-[#6b21a8] to-[#9333ea] text-[#0a0a0a] shadow-[0_4px_15px_rgba(168,85,247,0.5)] border border-[#a855f7]/50"
+                    ? "bg-gradient-to-r from-[#6b21a8] to-[#9333ea] text-[#0a0a0a] shadow-[0_4px_15px_rgba(0,0,0,0.03)] border border-[#a855f7]/50"
                     : "text-zinc-700 hover:text-[#0a0a0a] hover:drop-shadow-[0_0_5px_rgba(255,255,255,0.8)]"
                 }`}
               >
@@ -99,7 +99,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ type: "spring", bounce: 0.3, duration: 0.4 }}
-            className="absolute top-[90px] left-4 right-4 glass-card rounded-2xl flex flex-col p-6 gap-3 md:hidden border border-accent-purple-500/40 pointer-events-auto shadow-[0_10px_40px_rgba(0,0,0,0.8)] bg-[#0a0118]/95 backdrop-blur-2xl"
+            className="absolute top-[90px] left-4 right-4 glass-card rounded-2xl flex flex-col p-6 gap-3 md:hidden border border-[#0a0a0a]/40 pointer-events-auto shadow-[0_10px_40px_rgba(0,0,0,0.1)] bg-[#f0f0f0]/95 backdrop-blur-2xl"
           >
             {navLinks.map((link) => {
               const isActive = link.name === "About";

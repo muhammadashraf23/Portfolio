@@ -60,13 +60,13 @@ export default function CursorTrail() {
             
             {/* The trailing, morphing ring */}
             <motion.div
-                className="fixed top-0 left-0 border-[1.5px] border-accent-cyan rounded-full shadow-[0_0_15px_rgba(6,182,212,0.6)]"
+                className="fixed top-0 left-0 border-[1.5px] border-accent-cyan rounded-full shadow-[0_0_15px_rgba(0,0,0,0.02)]"
                 animate={{
                     x: mousePosition.x - (isHovering ? 32 : 16),
                     y: mousePosition.y - (isHovering ? 32 : 16),
                     width: isHovering ? 64 : 32,
                     height: isHovering ? 64 : 32,
-                    backgroundColor: isHovering ? "rgba(6,182,212,0.1)" : "transparent"
+                    backgroundColor: isHovering ? "rgba(0,0,0,0.02)" : "transparent"
                 }}
                 transition={spring}
                 style={{
