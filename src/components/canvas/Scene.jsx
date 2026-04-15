@@ -2,13 +2,13 @@
 
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import EnergyRing from "./EnergyRing";
+import InteractiveGeometry from "./InteractiveGeometry";
 import { Environment } from "@react-three/drei";
 
 const Scene = () => {
     return (
         <Canvas
-            className="w-full h-full"
+            className="w-full h-full absolute inset-0 z-0"
             camera={{ position: [0, 0, 15], fov: 45 }}
             gl={{
                 antialias: false,
@@ -17,17 +17,16 @@ const Scene = () => {
                 stencil: false,
                 depth: true
             }}
-            dpr={[1, 1.5]} // Optimize for performance on high-DPI screens
+            dpr={[1, 1.5]}
         >
+            <ambientLight intensity={0.4} />
+            <directionalLight position={[0, 0, 1]} intensity={0.5} color="#ffffff" />
+            <directionalLight position={[5, 5, -5]} intensity={1.5} color="#ffffff" />
+            <directionalLight position={[-5, -5, -5]} intensity={1.5} color="#ffffff" />
             <Suspense fallback={null}>
-                {/* Single focal 3D element */}
-                <EnergyRing />
-
-                {/* Subtle ambient lighting */}
-                <ambientLight intensity={0.4} />
-                <pointLight position={[10, 10, 10]} intensity={0.6} color="#7042f8" />
-
-                <Environment preset="night" />
+                {/* We offset InteractiveGeometry away from the exact center blocking the text. */}
+                <InteractiveGeometry />
+                <Environment preset="studio" />
             </Suspense>
         </Canvas>
     );

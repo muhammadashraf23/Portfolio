@@ -1,12 +1,22 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import Scene from "./canvas/Scene";
-import { FaReact, FaVuejs, FaNodeJs, FaDatabase } from "react-icons/fa";
+import MagneticButton from "./MagneticButton";
 
 export default function HeroSection() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
   return (
-    <div className="relative flex flex-col h-full w-full bg-[#050014] overflow-hidden" id="about">
+    <div ref={containerRef} className="relative flex flex-col h-full w-full bg-[#050014] overflow-hidden" id="about">
 
       {/* Cyber Grid Pattern Background */}
       <div className="bg-cyber-grid pointer-events-none opacity-60"></div>
@@ -17,7 +27,10 @@ export default function HeroSection() {
       </div>
 
       {/* Content Overlay */}
-      <section className="relative flex flex-col items-center justify-center w-full min-h-screen px-4 md:px-20 z-[20] pt-[120px] pb-[100px]">
+      <motion.section 
+        style={{ scale, opacity }}
+        className="relative flex flex-col items-center justify-center w-full min-h-screen px-4 md:px-20 z-[20] pt-[120px] pb-[100px]"
+      >
 
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -31,82 +44,98 @@ export default function HeroSection() {
           </span>
 
           {/* Main Title */}
-          <h1 className="text-center text-5xl sm:text-6xl md:text-[6rem] lg:text-[7rem] font-black text-white leading-[1.05] mb-6 uppercase md:tracking-wide text-glow-purple font-orbitron">
-            HI, I'M MUHAMMAD<br />ASHRAF
-          </h1>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.08, delayChildren: 0.2 }
+              }
+            }}
+            className="text-center font-black text-white leading-[0.95] mb-8 uppercase md:tracking-wider font-orbitron"
+          >
+            <h1 className="flex flex-col items-center justify-center text-[13vw] sm:text-[11vw] md:text-[9vw] lg:text-[7.5vw]">
+              <div className="flex">
+                {"HI, I'M".split("").map((char, index) => (
+                  <motion.span
+                    key={`hi-${index}`}
+                    variants={{
+                      hidden: { opacity: 0, y: 50, rotateX: -90 },
+                      visible: { opacity: 1, y: 0, rotateX: 0, transition: { type: "spring", damping: 12, stiffness: 100 } }
+                    }}
+                    className="inline-block"
+                    style={{ whiteSpace: "pre" }}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </div>
+              
+              <div className="flex text-white mix-blend-difference">
+                {"MUHAMMAD".split("").map((char, index) => (
+                  <motion.span
+                    key={`muhammad-${index}`}
+                    variants={{
+                      hidden: { opacity: 0, y: 50, rotateX: -90 },
+                      visible: { opacity: 1, y: 0, rotateX: 0, transition: { type: "spring", damping: 12, stiffness: 100 } }
+                    }}
+                    className="inline-block"
+                    style={{ whiteSpace: "pre" }}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </div>
+
+              <div className="flex mt-[-1vw] text-white mix-blend-difference">
+                {"ASHRAF".split("").map((char, index) => (
+                  <motion.span
+                    key={`ashraf-${index}`}
+                    variants={{
+                      hidden: { opacity: 0, y: 50, rotateX: -90 },
+                      visible: { opacity: 1, y: 0, rotateX: 0, transition: { type: "spring", damping: 12, stiffness: 100 } }
+                    }}
+                    className="inline-block"
+                    style={{ whiteSpace: "pre" }}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </div>
+            </h1>
+          </motion.div>
 
           {/* Description */}
-          <p className="text-gray-300 text-center max-w-[700px] text-sm md:text-base mb-10 leading-relaxed px-4 opacity-90 drop-shadow-md">
-            I build modern, scalable web and mobile applications using cutting-edge technologies. 
-            Specialized in React, Vue, Node.js, and databases. Passionate about creating exceptional user experiences.
+          <p className="text-gray-300 text-center max-w-[700px] text-sm md:text-base lg:text-lg mb-10 leading-relaxed px-4 opacity-90 drop-shadow-md z-[30]">
+            Building the future of digital experiences. Specialized in highly scalable architectures, 
+            interactive full-stack applications, and premium WebGL integrations.
           </p>
 
-          {/* Skills Row */}
-          <div className="flex flex-col items-center mb-12 w-full mt-2">
-            <h3 className="text-white font-bold text-xl md:text-2xl mb-6 tracking-wide drop-shadow-[0_0_5px_rgba(255,255,255,0.8)] font-orbitron">Skills</h3>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-5">
-              
-              <motion.div 
-                whileHover={{ y: -5, scale: 1.05 }}
-                className="glass-skill-card bg-[rgba(20,10,40,0.6)] backdrop-blur-xl border border-[#a855f7]/30 shadow-[0_10px_30px_rgba(0,0,0,0.5),inset_0_0_15px_rgba(168,85,247,0.2)] rounded-[20px] w-[100px] h-[110px] md:w-[130px] md:h-[140px] flex flex-col items-center justify-center cursor-default group"
-              >
-                <div className="relative mb-3">
-                   <div className="absolute inset-0 bg-[#06b6d4] blur-xl rounded-full opacity-0 group-hover:opacity-40 transition-opacity"></div>
-                   <FaReact className="text-[#06b6d4] text-[2.5rem] md:text-[3.5rem] relative z-10 drop-shadow-[0_0_8px_rgba(6,182,212,0.8)] group-hover:drop-shadow-[0_0_15px_rgba(6,182,212,1)] transition-all" />
-                </div>
-                <span className="text-white text-xs md:text-sm font-semibold tracking-wide drop-shadow-md">React</span>
-              </motion.div>
 
-              <motion.div 
-                whileHover={{ y: -5, scale: 1.05 }}
-                className="glass-skill-card bg-[rgba(20,10,40,0.6)] backdrop-blur-xl border border-[#a855f7]/30 shadow-[0_10px_30px_rgba(0,0,0,0.5),inset_0_0_15px_rgba(168,85,247,0.2)] rounded-[20px] w-[100px] h-[110px] md:w-[130px] md:h-[140px] flex flex-col items-center justify-center cursor-default group"
-              >
-                <div className="relative mb-3">
-                   <div className="absolute inset-0 bg-[#4ade80] blur-xl rounded-full opacity-0 group-hover:opacity-40 transition-opacity"></div>
-                   <FaVuejs className="text-[#4ade80] text-[2.5rem] md:text-[3.5rem] relative z-10 drop-shadow-[0_0_8px_rgba(74,222,128,0.8)] group-hover:drop-shadow-[0_0_15px_rgba(74,222,128,1)] transition-all" />
-                </div>
-                <span className="text-white text-xs md:text-sm font-semibold tracking-wide drop-shadow-md">Vue.js</span>
-              </motion.div>
-
-              <motion.div 
-                whileHover={{ y: -5, scale: 1.05 }}
-                className="glass-skill-card bg-[rgba(20,10,40,0.6)] backdrop-blur-xl border border-[#a855f7]/30 shadow-[0_10px_30px_rgba(0,0,0,0.5),inset_0_0_15px_rgba(168,85,247,0.2)] rounded-[20px] w-[100px] h-[110px] md:w-[130px] md:h-[140px] flex flex-col items-center justify-center cursor-default group"
-              >
-                <div className="relative mb-3">
-                   <div className="absolute inset-0 bg-[#84cc16] blur-xl rounded-full opacity-0 group-hover:opacity-40 transition-opacity"></div>
-                   <FaNodeJs className="text-[#84cc16] text-[2.5rem] md:text-[3.5rem] relative z-10 drop-shadow-[0_0_8px_rgba(132,204,22,0.8)] group-hover:drop-shadow-[0_0_15px_rgba(132,204,22,1)] transition-all" />
-                </div>
-                <span className="text-white text-xs md:text-sm font-semibold tracking-wide drop-shadow-md">Node.js</span>
-              </motion.div>
-
-              <motion.div 
-                whileHover={{ y: -5, scale: 1.05 }}
-                className="glass-skill-card bg-[rgba(20,10,40,0.6)] backdrop-blur-xl border border-[#a855f7]/30 shadow-[0_10px_30px_rgba(0,0,0,0.5),inset_0_0_15px_rgba(168,85,247,0.2)] rounded-[20px] w-[100px] h-[110px] md:w-[130px] md:h-[140px] flex flex-col items-center justify-center cursor-default group"
-              >
-                <div className="relative mb-3">
-                   <div className="absolute inset-0 bg-[#e2e8f0] blur-xl rounded-full opacity-0 group-hover:opacity-40 transition-opacity"></div>
-                   <FaDatabase className="text-[#e2e8f0] text-[2.5rem] md:text-[3.5rem] relative z-10 drop-shadow-[0_0_8px_rgba(226,232,240,0.8)] group-hover:drop-shadow-[0_0_15px_rgba(226,232,240,1)] transition-all" />
-                </div>
-                <span className="text-white text-xs md:text-sm font-semibold tracking-wide drop-shadow-md">Databases</span>
-              </motion.div>
-
-            </div>
-          </div>
 
           {/* Action Buttons */}
-          <div className="flex gap-4 md:gap-6 flex-wrap justify-center font-orbitron tracking-widest mt-2">
-            <a
-              href="#contact"
-              className="bg-gradient-to-r from-[#8b31ea] to-[#b354f3] text-white px-8 py-3.5 md:px-10 md:py-4 rounded-full font-bold text-sm hover:scale-105 transition-transform shadow-[0_0_20px_rgba(168,85,247,0.6)] hover:shadow-[0_0_35px_rgba(168,85,247,0.9)]"
-            >
-              GET IN TOUCH
-            </a>
-            <a
-              href="#projects"
-              className="border border-[#a855f7]/70 text-gray-200 px-8 py-3.5 md:px-10 md:py-4 rounded-full font-bold text-sm hover:text-white hover:bg-[#a855f7]/10 transition-colors shadow-[0_0_15px_rgba(168,85,247,0.2),inset_0_0_15px_rgba(168,85,247,0.1)]"
-            >
-              VIEW PROJECTS
-            </a>
+          <div className="flex gap-4 md:gap-6 flex-wrap justify-center font-orbitron tracking-widest mt-2 z-[30]">
+            <MagneticButton>
+              <a
+                href="#contact"
+                className="relative overflow-hidden group bg-white text-black px-8 py-3.5 md:px-10 md:py-4 rounded-none font-bold text-sm block transition-transform border border-white"
+              >
+                <span className="absolute inset-0 w-full h-full bg-[#ff3300] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                <span className="relative z-10 group-hover:text-white transition-colors">GET IN TOUCH</span>
+              </a>
+            </MagneticButton>
+            
+            <MagneticButton>
+              <a
+                href="#projects"
+                className="relative overflow-hidden group border border-zinc-700 bg-transparent text-gray-300 px-8 py-3.5 md:px-10 md:py-4 rounded-none font-bold text-sm block hover:text-white transition-colors hover:border-white"
+              >
+                <span className="absolute inset-0 w-full h-full bg-white opacity-0 group-hover:opacity-10 transition-opacity"></span>
+                <span className="relative z-10">VIEW PROJECTS</span>
+              </a>
+            </MagneticButton>
           </div>
         </motion.div>
 
@@ -128,7 +157,7 @@ export default function HeroSection() {
           </a>
         </motion.div>
 
-      </section>
+      </motion.section>
     </div>
   );
 }

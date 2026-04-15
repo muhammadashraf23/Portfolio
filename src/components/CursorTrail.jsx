@@ -1,83 +1,78 @@
 "use client";
-
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function CursorTrail() {
-    const [particles, setParticles] = useState([]);
-    const nextId = useRef(0);
-
-    // theme colors
-    const COLORS = [
-        "rgba(168, 85, 247, 0.6)", // Purple
-        "rgba(0, 212, 255, 0.5)",   // Cyan
-        "rgba(112, 66, 248, 0.4)", // Deep Purple
-    ];
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [isHovering, setIsHovering] = useState(false);
 
     useEffect(() => {
-        // Disable trail on mobile/touch devices for better performance
+        // Disable custom cursor on mobile
         const isMobile = window.innerWidth < 768 || ('ontouchstart' in window);
         if (isMobile) return;
 
-        const handleMouseMove = (e) => {
-            const newParticle = {
-                id: nextId.current++,
-                x: e.clientX,
-                y: e.clientY,
-                color: COLORS[Math.floor(Math.random() * COLORS.length)],
-                createdAt: Date.now(),
-            };
-
-            setParticles((prev) => [...prev.slice(-30), newParticle]);
+        const updateMousePosition = (e) => {
+            setMousePosition({ x: e.clientX, y: e.clientY });
         };
 
-        window.addEventListener("mousemove", handleMouseMove);
+        const handleMouseOver = (e) => {
+            // If hovering over a button or link, enlarge the cursor
+            if (e.target.closest('a') || e.target.closest('button')) {
+                setIsHovering(true);
+            } else {
+                setIsHovering(false);
+            }
+        };
 
-        // Periodically clean up old particles
-        const interval = setInterval(() => {
-            setParticles((prev) =>
-                prev.filter((p) => Date.now() - p.createdAt < 2000)
-            );
-        }, 100);
+        window.addEventListener("mousemove", updateMousePosition);
+        window.addEventListener("mouseover", handleMouseOver);
+
+        // Hide default cursor completely to sell the effect
+        document.body.style.cursor = 'none';
 
         return () => {
-            window.removeEventListener("mousemove", handleMouseMove);
-            clearInterval(interval);
+            window.removeEventListener("mousemove", updateMousePosition);
+            window.removeEventListener("mouseover", handleMouseOver);
+            document.body.style.cursor = 'auto';
         };
     }, []);
 
+    // Spring configuration for the lagging ring
+    const spring = {
+        type: "spring",
+        stiffness: 500,
+        damping: 28,
+        mass: 0.5
+    };
+
     return (
-        <div className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden">
-            {particles.map((particle) => (
-                <Particle key={particle.id} particle={particle} />
-            ))}
+        <div className="hidden md:block pointer-events-none fixed inset-0 z-[9999]">
+            {/* The primary tiny dot */}
+            <motion.div
+                className="fixed top-0 left-0 w-2 h-2 bg-white rounded-full mix-blend-difference"
+                animate={{
+                    x: mousePosition.x - 4,
+                    y: mousePosition.y - 4,
+                    scale: isHovering ? 0 : 1
+                }}
+                transition={{ type: "tween", ease: "backOut", duration: 0 }}
+            />
+            
+            {/* The trailing, morphing ring */}
+            <motion.div
+                className="fixed top-0 left-0 border-[1.5px] border-accent-cyan rounded-full shadow-[0_0_15px_rgba(6,182,212,0.6)]"
+                animate={{
+                    x: mousePosition.x - (isHovering ? 32 : 16),
+                    y: mousePosition.y - (isHovering ? 32 : 16),
+                    width: isHovering ? 64 : 32,
+                    height: isHovering ? 64 : 32,
+                    backgroundColor: isHovering ? "rgba(6,182,212,0.1)" : "transparent"
+                }}
+                transition={spring}
+                style={{
+                   backdropFilter: isHovering ? "blur(2px)" : "none" 
+                }}
+            />
         </div>
-    );
-}
-
-function Particle({ particle }) {
-    const [active, setActive] = useState(false);
-
-    useEffect(() => {
-        // Trigger animation slightly after mount
-        const timer = setTimeout(() => setActive(true), 10);
-        return () => clearTimeout(timer);
-    }, []);
-
-    return (
-        <div
-            className="absolute rounded-full pointer-events-none"
-            style={{
-                left: particle.x,
-                top: particle.y,
-                width: active ? '60px' : '10px',
-                height: active ? '60px' : '10px',
-                opacity: active ? 0 : 0.8,
-                transform: `translate(-50%, -50%) ${active ? 'scale(1.5)' : 'scale(1)'}`,
-                background: `radial-gradient(circle, ${particle.color} 0%, transparent 70%)`,
-                boxShadow: `0 0 20px ${particle.color}`,
-                transition: "all 1.5s cubic-bezier(0.1, 0.1, 0.2, 1)",
-                willChange: "transform, opacity, width, height",
-            }}
-        />
     );
 }
