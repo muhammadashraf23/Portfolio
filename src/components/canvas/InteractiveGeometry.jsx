@@ -25,8 +25,9 @@ export default function InteractiveGeometry() {
 
   return (
     <Float speed={2} rotationIntensity={1} floatIntensity={1} floatingRange={[-0.5, 0.5]}>
-      <mesh ref={meshRef} position={[0, -0.5, -2]} scale={1.8}>
-        <icosahedronGeometry args={[1, 1]} />
+      <mesh ref={meshRef} position={[0, 0, 0]} scale={1.8}>
+        {/* Sleek Light Brutalism Sculpture */}
+        <torusKnotGeometry args={[0.8, 0.2, 128, 32]} />
         
         <MeshTransmissionMaterial
           backside
