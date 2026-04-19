@@ -2,7 +2,7 @@
 
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import InteractiveGeometry from "./InteractiveGeometry";
+import Workspace from "./Workspace";
 import { Environment } from "@react-three/drei";
 
 const Scene = () => {
@@ -24,8 +24,7 @@ const Scene = () => {
             <directionalLight position={[5, 5, -5]} intensity={1.5} color="#ffffff" />
             <directionalLight position={[-5, -5, -5]} intensity={1.5} color="#ffffff" />
             <Suspense fallback={null}>
-                {/* We offset InteractiveGeometry away from the exact center blocking the text. */}
-                <InteractiveGeometry />
+                <Workspace />
                 <Environment preset="studio" />
             </Suspense>
         </Canvas>

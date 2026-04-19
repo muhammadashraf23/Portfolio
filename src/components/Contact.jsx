@@ -113,7 +113,7 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full py-4 bg-gradient-primary text-[#0a0a0a] font-bold rounded-xl shadow-glow-purple hover:shadow-glow-cyan transition-all hover:scale-[1.02] active:scale-95"
+                className="w-full py-4 bg-gradient-primary text-white font-bold rounded-xl shadow-glow-purple hover:shadow-glow-cyan transition-all hover:scale-[1.02] active:scale-95"
               >
                 Send Message
               </button>
@@ -135,7 +135,7 @@ const Contact = () => {
                     className="flex items-center gap-4 md:gap-6 p-4 md:p-6 glass-card rounded-2xl border-transparent hover:border-accent-cyan-500 hover:shadow-glow-cyan transition-all group"
                   >
                     <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow-purple group-hover:scale-110 transition-transform">
-                      <item.icon className="text-xl md:text-2xl text-[#0a0a0a]" />
+                      <item.icon className="text-xl md:text-2xl text-white" />
                     </div>
                     <div>
                       <p className="text-xs md:text-sm text-zinc-600 font-bold uppercase tracking-wider">{item.label}</p>

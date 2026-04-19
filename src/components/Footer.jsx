@@ -46,7 +46,7 @@ const Footer = () => {
             <div className="flex gap-4">
               <a
                 href={`mailto:${contact.email}`}
-                className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center shadow-glow-purple hover:shadow-glow-cyan transition-all hover:scale-110"
+                className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center shadow-glow-purple hover:shadow-glow-cyan transition-all hover:scale-110 text-white"
                 aria-label="Email"
               >
                 <FaEnvelope className="text-xl" />
@@ -55,7 +55,7 @@ const Footer = () => {
                 href={contact.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center shadow-glow-purple hover:shadow-glow-cyan transition-all hover:scale-110"
+                className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center shadow-glow-purple hover:shadow-glow-cyan transition-all hover:scale-110 text-white"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="text-xl" />
@@ -64,7 +64,7 @@ const Footer = () => {
                 href={contact.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center shadow-glow-purple hover:shadow-glow-cyan transition-all hover:scale-110"
+                className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center shadow-glow-purple hover:shadow-glow-cyan transition-all hover:scale-110 text-white"
                 aria-label="GitHub"
               >
                 <FaGithub className="text-xl" />
