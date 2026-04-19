@@ -43,11 +43,11 @@ module.exports = {
                 },
             },
             boxShadow: {
-                card: "0px 35px 120px -15px #050505",
-                "glow-purple": "0 0 1px rgba(255, 255, 255, 0.2)",
-                "glow-cyan": "0 0 1px rgba(255, 255, 255, 0.2)",
-                "glow-purple-lg": "0 0 3px rgba(255, 255, 255, 0.3)",
-                "glow-cyan-lg": "0 0 3px rgba(255, 255, 255, 0.3)",
+                card: "0px 35px 120px -15px rgba(0,0,0,0.1)",
+                "glow-purple": "0 0 1px rgba(0, 0, 0, 0.1)",
+                "glow-cyan": "0 0 1px rgba(0, 0, 0, 0.1)",
+                "glow-purple-lg": "0 10px 30px rgba(0, 0, 0, 0.05)",
+                "glow-cyan-lg": "0 10px 30px rgba(0, 0, 0, 0.05)",
             },
             screens: {
                 xs: "450px",
