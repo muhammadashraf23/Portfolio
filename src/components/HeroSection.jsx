@@ -2,7 +2,6 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import Scene from "./canvas/Scene";
 import MagneticButton from "./MagneticButton";
 
 export default function HeroSection() {
@@ -17,25 +16,24 @@ export default function HeroSection() {
 
   return (
     <div ref={containerRef} className="relative flex flex-col h-full w-full bg-transparent overflow-hidden" id="about">
-
+      {/* Soft accent background for hero */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-accent-cyan-100/30 via-transparent to-accent-purple-100/20" aria-hidden="true"></div>
       {/* Cyber Grid Pattern Background */}
       <div className="bg-cyber-grid pointer-events-none opacity-60"></div>
-
       {/* Content Overlay */}
       <motion.section 
         style={{ scale, opacity }}
-        className="relative flex flex-col md:flex-row items-center justify-between w-full min-h-screen px-4 md:px-12 lg:px-20 z-[20] pt-[100px] md:pt-[120px] pb-[100px] max-w-[1400px] mx-auto gap-10"
+        className="relative flex flex-col items-center justify-center w-full min-h-screen px-4 md:px-12 lg:px-20 z-[20] pt-[100px] md:pt-[120px] pb-[100px] max-w-[900px] mx-auto gap-10"
       >
-
         {/* LEFT COLUMN: TYPOGRAPHY & CTAs */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col items-start text-left w-full md:w-1/2 mt-8 z-[30] order-last md:order-first"
+          className="flex flex-col items-start text-left w-full mt-8 z-[30]"
         >
           {/* Subtitle */}
-          <span className="text-zinc-600 font-bold font-orbitron tracking-[0.2em] md:tracking-[0.3em] text-[10px] sm:text-xs md:text-sm uppercase mb-4 text-glow-cyan">
+          <span className="text-accent-cyan-700 font-bold font-orbitron tracking-[0.2em] md:tracking-[0.3em] text-[10px] sm:text-xs md:text-sm uppercase mb-4 text-glow-cyan">
             FULL STACK DEVELOPER
           </span>
 
@@ -104,9 +102,8 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Description */}
-          <p className="text-zinc-700 text-left max-w-[500px] text-sm md:text-base lg:text-lg mb-10 leading-relaxed font-medium">
-            Building the future of digital experiences. Specialized in highly scalable architectures, 
-            interactive full-stack applications, and premium WebGL integrations.
+          <p className="text-zinc-700 text-left max-w-[500px] text-base md:text-lg lg:text-xl mb-10 leading-relaxed font-medium">
+            Building the future of digital experiences. Specialized in highly scalable architectures, interactive full-stack applications, and premium UI/UX.
           </p>
 
           {/* Action Buttons */}
@@ -114,9 +111,9 @@ export default function HeroSection() {
             <MagneticButton>
               <a
                 href="#contact"
-                className="relative overflow-hidden group bg-[#0a0a0a] text-white px-8 py-3.5 md:px-10 md:py-4 rounded-none font-bold text-xs sm:text-sm block transition-transform border border-[#0a0a0a]"
+                className="relative overflow-hidden group bg-gradient-to-r from-accent-cyan-600 to-accent-purple-500 text-white px-8 py-3.5 md:px-10 md:py-4 rounded-full font-bold text-xs sm:text-sm block transition-transform border border-transparent shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent-cyan-400"
               >
-                <span className="absolute inset-0 w-full h-full bg-[#ff3300] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                <span className="absolute inset-0 w-full h-full bg-[#ff3300] opacity-0 group-hover:opacity-20 transition-opacity rounded-full"></span>
                 <span className="relative z-10 text-white transition-colors">GET IN TOUCH</span>
               </a>
             </MagneticButton>
@@ -124,24 +121,13 @@ export default function HeroSection() {
             <MagneticButton>
               <a
                 href="#projects"
-                className="relative overflow-hidden group border border-[#0a0a0a] bg-transparent text-[#0a0a0a] px-8 py-3.5 md:px-10 md:py-4 rounded-none font-bold text-xs sm:text-sm block transition-colors"
+                className="relative overflow-hidden group border border-accent-cyan-400 bg-white text-accent-cyan-700 px-8 py-3.5 md:px-10 md:py-4 rounded-full font-bold text-xs sm:text-sm block transition-colors shadow hover:bg-accent-cyan-50 hover:text-accent-cyan-900 focus:outline-none focus:ring-2 focus:ring-accent-cyan-400"
               >
-                <span className="absolute inset-0 w-full h-full bg-[#0a0a0a] opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                <span className="relative z-10 group-hover:text-white transition-colors">VIEW PROJECTS</span>
+                <span className="absolute inset-0 w-full h-full bg-accent-cyan-100 opacity-0 group-hover:opacity-10 transition-opacity rounded-full"></span>
+                <span className="relative z-10 group-hover:text-accent-cyan-900 transition-colors">VIEW PROJECTS</span>
               </a>
             </MagneticButton>
           </div>
-        </motion.div>
-
-        {/* RIGHT COLUMN: 3D HERO OBJECT */}
-        <motion.div
-           initial={{ opacity: 0, scale: 0.8 }}
-           animate={{ opacity: 1, scale: 1 }}
-           transition={{ duration: 0.8, delay: 0.2 }}
-           className="relative w-full md:w-1/2 h-[40vh] md:h-[70vh] flex items-center justify-center pointer-events-auto order-first md:order-last z-[10]"
-        >
-           {/* Scene is now contained strictly within the right half of the screen */}
-           <Scene />
         </motion.div>
 
         {/* Minimal Scroll Indicator */}

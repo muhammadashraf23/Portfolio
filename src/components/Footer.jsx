@@ -6,12 +6,11 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative z-20 py-12 text-[#0a0a0a] overflow-hidden">
+    <footer className="relative z-20 py-14 text-[#0a0a0a] overflow-hidden bg-gradient-to-t from-accent-purple-100/20 via-background to-background">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-t from-accent-purple-900/30 via-background to-background z-0" />
-
+      {/* Removed extra background div for cleaner look */}
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           {/* Brand Section */}
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-3 mb-4">
@@ -74,12 +73,14 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="section-divider my-8" />
+        <div className="my-10 flex justify-center">
+          <div className="h-[2px] w-2/3 bg-gradient-to-r from-accent-cyan-400/0 via-accent-cyan-400/40 to-accent-cyan-400/0 rounded-full" />
+        </div>
 
         {/* Copyright */}
         <div className="text-center text-zinc-600 text-sm">
           <p>© {currentYear} Muhammad Ashraf. All rights reserved.</p>
-          <p className="mt-2">Built with Next.js, React Three Fiber & Tailwind CSS</p>
+          <p className="mt-2">Built with Next.js & Tailwind CSS</p>
         </div>
       </div>
     </footer>

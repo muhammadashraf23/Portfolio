@@ -1,0 +1,1 @@
+This folder and its contents are marked for deletion as all 3D/three.js related code is being removed from the project.

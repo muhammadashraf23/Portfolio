@@ -18,7 +18,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="fixed top-8 w-full flex justify-center z-[100] px-4 pointer-events-none">
+    <div className="sticky top-0 w-full flex justify-center z-[100] px-4 pointer-events-none transition-shadow duration-300 shadow-[0_2px_16px_rgba(0,0,0,0.06)] bg-[#f0f0f0]/80 backdrop-blur-xl">
       {/* Outer rounded container exactly matching the image */}
       <nav className="pointer-events-auto h-[55px] md:h-[65px] glass-pill flex items-center justify-between px-4 md:px-8 w-full max-w-[850px] border border-[#0a0a0a]/30 shadow-none rounded-full bg-[#f0f0f0]/80 backdrop-blur-xl">
         
@@ -99,7 +99,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ type: "spring", bounce: 0.3, duration: 0.4 }}
-            className="absolute top-[90px] left-4 right-4 glass-card rounded-2xl flex flex-col p-6 gap-3 md:hidden border border-[#0a0a0a]/40 pointer-events-auto shadow-[0_10px_40px_rgba(0,0,0,0.1)] bg-[#f0f0f0]/95 backdrop-blur-2xl"
+            className="absolute top-[90px] left-4 right-4 glass-card rounded-2xl flex flex-col p-6 gap-3 md:hidden border border-[#0a0a0a]/40 pointer-events-auto shadow-[0_16px_48px_rgba(0,0,0,0.13)] bg-[#f0f0f0]/95 backdrop-blur-2xl"
           >
             {navLinks.map((link) => {
               const isActive = link.name === "About";
