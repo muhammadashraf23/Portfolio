@@ -111,9 +111,9 @@ export default function HeroSection() {
             <MagneticButton>
               <a
                 href="#contact"
-                className="relative overflow-hidden group bg-gradient-to-r from-accent-cyan-600 to-accent-purple-500 text-white px-8 py-3.5 md:px-10 md:py-4 rounded-full font-bold text-xs sm:text-sm block transition-transform border border-transparent shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent-cyan-400"
+                className="relative overflow-hidden group bg-gradient-to-r from-accent-purple-600 to-accent-cyan-600 text-white px-8 py-3.5 md:px-10 md:py-4 rounded-full font-bold text-xs sm:text-sm block transition-all shadow-glow-purple hover:shadow-glow-cyan hover:-translate-y-1 focus:outline-none"
               >
-                <span className="absolute inset-0 w-full h-full bg-[#ff3300] opacity-0 group-hover:opacity-20 transition-opacity rounded-full"></span>
+                <span className="absolute inset-0 w-full h-full bg-white opacity-0 group-hover:opacity-20 transition-opacity rounded-full"></span>
                 <span className="relative z-10 text-white transition-colors">GET IN TOUCH</span>
               </a>
             </MagneticButton>
@@ -121,10 +121,9 @@ export default function HeroSection() {
             <MagneticButton>
               <a
                 href="#projects"
-                className="relative overflow-hidden group border border-accent-cyan-400 bg-white text-accent-cyan-700 px-8 py-3.5 md:px-10 md:py-4 rounded-full font-bold text-xs sm:text-sm block transition-colors shadow hover:bg-accent-cyan-50 hover:text-accent-cyan-900 focus:outline-none focus:ring-2 focus:ring-accent-cyan-400"
+                className="relative overflow-hidden group border-2 border-accent-purple-500/50 bg-background/50 backdrop-blur-sm text-zinc-800 px-8 py-3.5 md:px-10 md:py-4 rounded-full font-bold text-xs sm:text-sm block transition-all hover:bg-accent-purple-500/10 hover:border-accent-cyan-500 hover:text-[#0a0a0a] hover:-translate-y-1 focus:outline-none"
               >
-                <span className="absolute inset-0 w-full h-full bg-accent-cyan-100 opacity-0 group-hover:opacity-10 transition-opacity rounded-full"></span>
-                <span className="relative z-10 group-hover:text-accent-cyan-900 transition-colors">VIEW PROJECTS</span>
+                <span className="relative z-10 transition-colors">VIEW PROJECTS</span>
               </a>
             </MagneticButton>
           </div>

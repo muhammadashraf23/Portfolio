@@ -42,12 +42,10 @@ const Contact = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      {/* Elegant Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan-900/20 via-background to-accent-purple-900/20 z-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.03),transparent_50%)] z-0" />
+      {/* Background gradients removed for global layout consistency */}
 
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-4xl md:text-6xl font-bold text-center mb-6 text-gradient">
+        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-gradient">
           Get In Touch
         </h2>
         <p className="text-center text-zinc-600 mb-4 max-w-2xl mx-auto text-base md:text-lg">

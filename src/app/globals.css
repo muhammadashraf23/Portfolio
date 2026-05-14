@@ -12,16 +12,15 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; removed for Lenis compatibility */
 }
 
 html,
 body {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     background: #e8e6e3;
     background-attachment: fixed;
-    overflow-x: hidden;
     color: #0a0a0a;
     font-family: var(--font-inter), sans-serif;
 }

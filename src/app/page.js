@@ -11,7 +11,7 @@ import SkillsSection from "@/components/SkillsSection";
 export default function Home() {
   return (
     <div className="bg-background min-h-screen w-full flex flex-col items-center">
-      <main className="w-full max-w-5xl px-2 sm:px-6 md:px-10 flex flex-col items-center">
+      <main className="w-full max-w-7xl px-4 sm:px-6 md:px-10 flex flex-col items-center">
         <HeroSection />
         <div className="section-divider max-sm:mt-2" />
         <About />

@@ -6,12 +6,10 @@ import { experiences } from '@/data/experience';
 const Experience = () => {
   return (
     <section id="experience" className="py-20 flex flex-col items-center justify-center gap-10 relative z-20 overflow-hidden">
-      {/* Elegant Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan-900/20 via-background to-accent-purple-900/20 z-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(0,0,0,0.03),transparent_50%)] z-0" />
+      {/* Background gradients removed for global layout consistency */}
 
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-5xl md:text-6xl font-bold mb-16 text-center text-gradient">
+        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-gradient">
           Work Experience
         </h2>
 
@@ -29,7 +27,7 @@ const Experience = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-accent-purple-500 to-accent-cyan-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
 
                 {/* Card */}
-                <div className="relative p-6 md:p-8 glass-card rounded-2xl hover:border-accent-cyan-500 hover:shadow-glow-cyan hover:-translate-y-1 transition-all duration-500">
+                <div className="relative p-8 md:p-10 glass-card rounded-2xl hover:border-accent-cyan-500 hover:shadow-glow-cyan hover:-translate-y-1 transition-all duration-500">
 
                   {/* Timeline Dot */}
                   <div className={`absolute top-1/2 transform -translate-y-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-accent-purple-500 to-accent-cyan-500 shadow-glow-purple hidden md:block ${index % 2 === 0 ? '-right-[calc(11.1%+8px)]' : '-left-[calc(11.1%+8px)]'}`} />

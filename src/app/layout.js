@@ -55,18 +55,22 @@ export const metadata = {
 
 import CursorTrail from "@/components/CursorTrail";
 
+import SmoothScrolling from "@/components/SmoothScrolling";
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground overflow-x-hidden min-h-screen relative`}
       >
         <div className="noise-overlay pointer-events-none"></div>
         {/* Soft radial background accent for modern look */}
         <div className="fixed inset-0 -z-10 bg-gradient-radial from-accent-cyan-100/30 via-background to-background opacity-70" aria-hidden="true"></div>
-        <CursorTrail />
-        <Navbar />
-        <main className="flex flex-col items-center w-full min-h-screen">{children}</main>
+        <SmoothScrolling>
+          <CursorTrail />
+          <Navbar />
+          <main className="flex flex-col items-center w-full min-h-screen">{children}</main>
+        </SmoothScrolling>
       </body>
     </html>
   );

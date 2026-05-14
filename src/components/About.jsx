@@ -17,13 +17,10 @@ export default function About() {
       aria-label="About Muhammad Ashraf"
       className="min-h-screen flex flex-col justify-center items-center px-6 md:px-20 py-20 text-[#0a0a0a] relative z-20 overflow-hidden"
     >
-      {/* Elegant Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent-purple-900/20 via-background to-accent-cyan-900/20 z-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,0,0,0.03),transparent_50%)] z-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(0,0,0,0.02),transparent_50%)] z-0" />
+      {/* Background gradients removed for global layout consistency */}
 
       {/* Content Container */}
-      <article className="max-w-6xl w-full p-8 md:p-12 glass-card rounded-3xl shadow-glow-purple relative z-10">
+      <article className="max-w-6xl w-full relative z-10">
 
         {/* Subtle Corner Accents */}
         <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-accent-cyan-500/50 rounded-tl-3xl" />
@@ -57,7 +54,7 @@ export default function About() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient">
+            <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-gradient">
               About Me
             </h2>
             <div className="space-y-4">

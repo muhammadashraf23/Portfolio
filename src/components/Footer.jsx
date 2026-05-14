@@ -10,42 +10,45 @@ const Footer = () => {
       {/* Background */}
       {/* Removed extra background div for cleaner look */}
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-10 max-w-6xl mx-auto glass-card p-10 rounded-3xl border border-accent-cyan-500/20 shadow-glow-cyan">
           {/* Brand Section */}
-          <div className="flex flex-col items-center md:items-start">
-            <div className="flex items-center gap-3 mb-4">
-              <Image
-                src="/images/logo.PNG"
-                alt="Logo"
-                width={40}
-                height={40}
-                className="rounded-full"
-              />
-              <span className="font-bold text-xl text-gradient">Muhammad Ashraf</span>
+          <div className="flex flex-col items-center md:items-start space-y-4">
+            <div className="flex items-center gap-4">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-accent-purple-500 to-accent-cyan-500 rounded-full blur-md opacity-40 group-hover:opacity-80 transition-opacity"></div>
+                <Image
+                  src="/images/logo.PNG"
+                  alt="Logo"
+                  width={50}
+                  height={50}
+                  className="rounded-full relative z-10 border-2 border-background"
+                />
+              </div>
+              <span className="font-bold text-2xl text-gradient font-orbitron tracking-wider">Muhammad Ashraf</span>
             </div>
-            <p className="text-zinc-600 text-sm text-center md:text-left">
-              Full Stack Developer specializing in MERN stack and modern web technologies.
+            <p className="text-zinc-600 text-sm md:text-base text-center md:text-left leading-relaxed max-w-sm">
+              Crafting premium digital experiences through scalable full-stack architecture and modern web design.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="flex flex-col items-center">
-            <h3 className="font-bold text-lg mb-4 text-gradient-secondary">Quick Links</h3>
-            <div className="flex flex-col gap-2 text-zinc-600">
-              <a href="#about" className="hover:text-accent-cyan-400 transition-colors">About</a>
-              <a href="#skills" className="hover:text-accent-cyan-400 transition-colors">Skills</a>
-              <a href="#projects" className="hover:text-accent-cyan-400 transition-colors">Projects</a>
-              <a href="#contact" className="hover:text-accent-cyan-400 transition-colors">Contact</a>
+            <h3 className="font-bold text-xl mb-6 text-gradient-secondary font-orbitron tracking-widest uppercase text-sm">Navigation</h3>
+            <div className="flex flex-col gap-3 text-zinc-600 font-medium">
+              <a href="#about" className="hover:text-accent-cyan-500 hover:translate-x-1 transition-transform">About</a>
+              <a href="#skills" className="hover:text-accent-cyan-500 hover:translate-x-1 transition-transform">Skills</a>
+              <a href="#projects" className="hover:text-accent-cyan-500 hover:translate-x-1 transition-transform">Projects</a>
+              <a href="#experience" className="hover:text-accent-cyan-500 hover:translate-x-1 transition-transform">Experience</a>
             </div>
           </div>
 
           {/* Social Links */}
           <div className="flex flex-col items-center md:items-end">
-            <h3 className="font-bold text-lg mb-4 text-gradient-secondary">Connect</h3>
+            <h3 className="font-bold text-xl mb-6 text-gradient-secondary font-orbitron tracking-widest uppercase text-sm">Connect</h3>
             <div className="flex gap-4">
               <a
                 href={`mailto:${contact.email}`}
-                className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center shadow-glow-purple hover:shadow-glow-cyan transition-all hover:scale-110 text-white"
+                className="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center shadow-glow-purple hover:shadow-glow-cyan transition-all hover:scale-110 text-white border border-zinc-700 hover:border-accent-cyan-500"
                 aria-label="Email"
               >
                 <FaEnvelope className="text-xl" />
@@ -54,7 +57,7 @@ const Footer = () => {
                 href={contact.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center shadow-glow-purple hover:shadow-glow-cyan transition-all hover:scale-110 text-white"
+                className="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center shadow-glow-purple hover:shadow-glow-cyan transition-all hover:scale-110 text-white border border-zinc-700 hover:border-accent-cyan-500"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="text-xl" />
@@ -63,7 +66,7 @@ const Footer = () => {
                 href={contact.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center shadow-glow-purple hover:shadow-glow-cyan transition-all hover:scale-110 text-white"
+                className="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center shadow-glow-purple hover:shadow-glow-cyan transition-all hover:scale-110 text-white border border-zinc-700 hover:border-accent-cyan-500"
                 aria-label="GitHub"
               >
                 <FaGithub className="text-xl" />

@@ -4,9 +4,11 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   const navLinks = [
     { name: "About", href: "#about" },
@@ -16,6 +18,29 @@ const Navbar = () => {
     { name: "Resume", href: "/resume.pdf", isExternal: true },
     { name: "GitHub", href: "https://github.com/muhammadashraf23", isExternal: true },
   ];
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navLinks.filter(link => link.href.startsWith('#')).map(link => link.href.substring(1));
+      let current = "";
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            current = section;
+          }
+        }
+      }
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Run once on mount to set initial active section
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="sticky top-0 w-full flex justify-center z-[100] px-4 pointer-events-none transition-shadow duration-300 shadow-[0_2px_16px_rgba(0,0,0,0.06)] bg-[#f0f0f0]/80 backdrop-blur-xl">
@@ -46,7 +71,7 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-2">
           {navLinks.map((link) => {
-            const isActive = link.name === "About";
+            const isActive = link.href === `#${activeSection}`;
             if (link.isExternal) {
               return (
                 <a
@@ -102,7 +127,7 @@ const Navbar = () => {
             className="absolute top-[90px] left-4 right-4 glass-card rounded-2xl flex flex-col p-6 gap-3 md:hidden border border-[#0a0a0a]/40 pointer-events-auto shadow-[0_16px_48px_rgba(0,0,0,0.13)] bg-[#f0f0f0]/95 backdrop-blur-2xl"
           >
             {navLinks.map((link) => {
-              const isActive = link.name === "About";
+              const isActive = link.href === `#${activeSection}`;
               if (link.isExternal) {
                  return (
                     <a
