@@ -51,7 +51,7 @@ const Navbar = () => {
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex flex-row gap-5 items-center">
-          <a href="/resume.pdf" download className="text-white cursor-pointer hover:text-accent-cyan-400 transition-colors font-medium border border-accent-purple-500/30 px-4 py-1.5 rounded-full bg-accent-purple-900/10 text-sm">
+          <a href="/MUHAMMAD_ASHRAF_Resume.pdf" download className="text-white cursor-pointer hover:text-accent-cyan-400 transition-colors font-medium border border-accent-purple-500/30 px-4 py-1.5 rounded-full bg-accent-purple-900/10 text-sm">
             Resume
           </a>
           <a href="https://github.com/muhammadashraf23" target="_blank" rel="noreferrer" className="text-white cursor-pointer hover:text-accent-cyan-400 transition-colors font-medium text-sm">
@@ -95,7 +95,7 @@ const Navbar = () => {
             ))}
             <div className="flex flex-col gap-4 w-full mt-4">
               <a
-                href="/resume.pdf"
+                href="/MUHAMMAD_ASHRAF_Resume.pdf"
                 download
                 className="w-full text-center py-4 bg-gradient-primary rounded-xl text-white font-bold"
               >
