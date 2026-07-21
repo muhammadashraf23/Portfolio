@@ -26,7 +26,7 @@ const Projects = () => {
           {projects.map((project, index) => {
             const isEven = index % 2 === 0;
             const projectNumber = (index + 1).toString().padStart(2, '0');
-            const hasConnector = index < projects.length - 1;
+            const hasConnector = false; // Set to true if you want to show the connector line between projects
 
             return (
               <div 
@@ -117,44 +117,44 @@ const Projects = () => {
 
                 {hasConnector && (
                   <div
-                    className="pointer-events-none absolute inset-x-0 top-full z-0 hidden md:block -translate-y-6"
+                    className="pointer-events-none absolute inset-x-0 top-full z-0 hidden md:block"
                     aria-hidden="true"
                   >
                     <svg
-                      className="mx-auto h-18 w-[82%] max-w-[1000px] overflow-visible"
+                      className="mx-auto h-16 w-[80%] max-w-[1000px] overflow-visible"
                       viewBox="0 0 1000 60"
                       preserveAspectRatio="none"
                     >
                       <defs>
                         <linearGradient id={`connectorGradient-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stopColor="#6b7280" stopOpacity="0.45" />
+                          <stop offset="0%" stopColor="#6b7280" stopOpacity="0.42" />
                           <stop offset="100%" stopColor="#9ca3af" stopOpacity="0.22" />
                         </linearGradient>
                       </defs>
                       <path
                         d={
                           isEven
-                            ? "M150 34 C330 58 670 58 850 34"
-                            : "M850 34 C670 58 330 58 150 34"
+                            ? "M220 36 C360 50 640 50 780 36"
+                            : "M780 36 C640 50 360 50 220 36"
                         }
                         fill="none"
                         stroke={`url(#connectorGradient-${index})`}
-                        strokeWidth="1.9"
+                        strokeWidth="1.8"
                         strokeLinecap="round"
                         strokeDasharray="4 9"
                         opacity="0.75"
                       />
                       <circle
-                        cx={isEven ? "150" : "850"}
-                        cy="34"
-                        r="4.5"
+                        cx={isEven ? "220" : "780"}
+                        cy="36"
+                        r="4"
                         className="fill-white stroke-zinc-400"
                         strokeWidth="1.4"
                       />
                       <circle
-                        cx={isEven ? "850" : "150"}
-                        cy="34"
-                        r="4.5"
+                        cx={isEven ? "780" : "220"}
+                        cy="36"
+                        r="4"
                         className="fill-white stroke-zinc-400"
                         strokeWidth="1.4"
                       />
