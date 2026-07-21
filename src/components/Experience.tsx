@@ -14,7 +14,7 @@ const Experience = () => {
         </h2>
 
         {/* Refined Timeline Line */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-accent-purple-500/50 via-accent-cyan-500/50 to-accent-purple-500/50 hidden md:block" />
+        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-zinc-300 hidden md:block" />
 
         <div className="w-full flex flex-col gap-16 max-w-5xl mx-auto">
           {experiences.map((experience, index) => (
@@ -24,23 +24,23 @@ const Experience = () => {
                 delay={index * 0.1}
               >
                 {/* Subtle Glow */}
-                <div className="absolute inset-0 bg-gradient-to-r from-accent-purple-500 to-accent-cyan-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-zinc-200 rounded-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500" />
 
                 {/* Card */}
-                <div className="relative p-8 md:p-10 glass-card rounded-2xl hover:border-accent-cyan-500 hover:shadow-glow-cyan hover:-translate-y-1 transition-all duration-500">
+                <div className="relative p-8 md:p-10 glass-card rounded-2xl hover:border-zinc-400 hover:shadow-lg hover:-translate-y-1 transition-all duration-500 border border-zinc-200">
 
                   {/* Timeline Dot */}
-                  <div className={`absolute top-1/2 transform -translate-y-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-accent-purple-500 to-accent-cyan-500 shadow-glow-purple hidden md:block ${index % 2 === 0 ? '-right-[calc(11.1%+8px)]' : '-left-[calc(11.1%+8px)]'}`} />
+                  <div className={`absolute top-1/2 transform -translate-y-1/2 w-4 h-4 rounded-full bg-[#0a0a0a] hidden md:block ${index % 2 === 0 ? '-right-[calc(11.1%+8px)]' : '-left-[calc(11.1%+8px)]'}`} />
 
                   {/* Subtle Corner Accents */}
-                  <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-accent-cyan-500/30 rounded-tr-2xl" />
-                  <div className="absolute bottom-0 left-0 w-12 h-12 border-b border-l border-accent-purple-500/30 rounded-bl-2xl" />
+                  <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-zinc-300 rounded-tr-2xl" />
+                  <div className="absolute bottom-0 left-0 w-12 h-12 border-b border-l border-zinc-300 rounded-bl-2xl" />
 
                   <h3 className="text-2xl md:text-3xl font-bold text-gradient-secondary mb-3">
                     {experience.title}
                   </h3>
                   <div className="flex flex-row items-center gap-4 mb-4">
-                    <span className="px-3 py-1.5 md:px-4 md:py-2 bg-gradient-secondary text-white font-bold rounded-lg text-xs md:text-sm">
+                    <span className="px-3 py-1.5 md:px-4 md:py-2 bg-[#0a0a0a] text-white font-bold rounded-lg text-xs md:text-sm">
                       {experience.company}
                     </span>
                   </div>

@@ -1,4 +1,6 @@
-export const contact = {
+import { ContactInfo } from "@/types";
+
+export const contact: ContactInfo = {
   email: "zfarhsa18@gmail.com",
   linkedin: "https://www.linkedin.com/in/muhammadashrafz23",
   github: "https://github.com/MuhammadAshraf23",

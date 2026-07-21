@@ -11,13 +11,14 @@ export default function CursorTrail() {
         const isMobile = window.innerWidth < 768 || ('ontouchstart' in window);
         if (isMobile) return;
 
-        const updateMousePosition = (e) => {
+        const updateMousePosition = (e: MouseEvent) => {
             setMousePosition({ x: e.clientX, y: e.clientY });
         };
 
-        const handleMouseOver = (e) => {
+        const handleMouseOver = (e: MouseEvent) => {
             // If hovering over a button or link, enlarge the cursor
-            if (e.target.closest('a') || e.target.closest('button')) {
+            const target = e.target as HTMLElement;
+            if (target.closest('a') || target.closest('button')) {
                 setIsHovering(true);
             } else {
                 setIsHovering(false);

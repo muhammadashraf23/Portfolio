@@ -12,14 +12,14 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Form submission logic would go here
     console.log("Form submitted:", formData);
     alert("Message sent successfully!");
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -104,7 +104,7 @@ const Contact = () => {
                   id="message"
                   name="message"
                   required
-                  rows="4"
+                  rows={4}
                   className="w-full bg-background border-2 border-accent-purple-500/30 rounded-xl px-4 py-3 focus:outline-none focus:border-accent-cyan-500 transition-colors text-[#0a0a0a] resize-none"
                   placeholder="Your message here..."
                 ></textarea>

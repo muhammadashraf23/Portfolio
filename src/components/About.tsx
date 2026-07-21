@@ -41,7 +41,6 @@ export default function About() {
                 alt="Muhammad Ashraf Profile"
                 width={288}
                 height={288}
-                priority={true}
                 className="rounded-full shadow-2xl object-cover max-sm:w-52 max-sm:h-52 relative z-10 border-4 border-accent-purple-500/30 group-hover:border-accent-cyan-500/50 transition-colors duration-500"
               />
             </div>

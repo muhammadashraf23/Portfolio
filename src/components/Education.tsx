@@ -21,17 +21,17 @@ const Education = () => {
               delay={index * 0.15}
             >
               {/* Subtle Glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-accent-purple-500 to-accent-cyan-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-zinc-200 rounded-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500" />
 
               {/* Card with Gradient Border */}
-              <div className="relative p-[2px] rounded-2xl bg-gradient-to-r from-accent-purple-500/50 via-accent-cyan-500/50 to-accent-purple-500/50 shadow-glow-purple group-hover:shadow-glow-cyan transition-all duration-500">
+              <div className="relative p-[2px] rounded-2xl bg-gradient-to-r from-zinc-200 via-zinc-300 to-zinc-200 shadow-sm group-hover:shadow-lg transition-all duration-500">
 
                 {/* Inner Card */}
                 <div className="bg-background rounded-2xl p-8 md:p-10 h-full w-full flex flex-col justify-between hover:bg-zinc-200 transition-all duration-500 relative overflow-hidden">
 
                   {/* Subtle Corner Accents */}
-                  <div className="absolute top-0 left-0 w-10 h-10 border-t border-l border-accent-purple-500/50 rounded-tl-2xl" />
-                  <div className="absolute bottom-0 right-0 w-10 h-10 border-b border-r border-accent-cyan-500/50 rounded-br-2xl" />
+                  <div className="absolute top-0 left-0 w-10 h-10 border-t border-l border-zinc-300 rounded-tl-2xl" />
+                  <div className="absolute bottom-0 right-0 w-10 h-10 border-b border-r border-zinc-300 rounded-br-2xl" />
 
                   <div className="relative z-10">
                     <h3 className="text-xl md:text-3xl font-bold text-gradient-secondary mb-3">
@@ -42,8 +42,8 @@ const Education = () => {
                     </p>
                   </div>
 
-                  <div className="border-t border-accent-purple-500/30 pt-4 relative z-10">
-                    <p className="text-accent-cyan-400 font-bold text-base md:text-lg">
+                  <div className="border-t border-zinc-300 pt-4 relative z-10">
+                    <p className="text-zinc-500 font-bold text-base md:text-lg">
                       {item.year}
                     </p>
                   </div>

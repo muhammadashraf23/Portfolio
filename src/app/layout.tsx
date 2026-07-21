@@ -17,6 +17,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://muhammad-ashraf.vercel.app"),
   title: {
     default: "Muhammad Ashraf | Expert Full Stack Developer",
     template: "%s | Muhammad Ashraf"
@@ -25,6 +26,9 @@ export const metadata = {
   keywords: ["Muhammad Ashraf", "Full Stack Developer", "Software Engineer", "React Developer", "Next.js Expert", "Web Development Pakistan", "MERN Stack"],
   authors: [{ name: "Muhammad Ashraf" }],
   creator: "Muhammad Ashraf",
+  alternates: {
+    canonical: "https://muhammad-ashraf.vercel.app",
+  },
   openGraph: {
     title: "Muhammad Ashraf | Full Stack Expert",
     description: "Professional Portfolio showcasing innovative web and mobile solutions.",
@@ -54,12 +58,34 @@ export const metadata = {
 };
 
 import CursorTrail from "@/components/CursorTrail";
-
 import SmoothScrolling from "@/components/SmoothScrolling";
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammad Ashraf",
+    "url": "https://muhammad-ashraf.vercel.app",
+    "image": "https://muhammad-ashraf.vercel.app/images/profile_photo.png",
+    "jobTitle": "Full Stack Developer",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Karachi"
+    },
+    "sameAs": [
+      "https://github.com/muhammadashraf23",
+      "https://www.linkedin.com/in/muhammadashrafz23/"
+    ]
+  };
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground overflow-x-hidden min-h-screen relative`}
       >

@@ -1,7 +1,11 @@
 'use client'
-import { motion } from "framer-motion";
+import { motion, HTMLMotionProps } from "framer-motion";
 
-const AnimatedSection = ({ children, delay, className, initial, whileInView, transition, viewport }) => {
+interface AnimatedSectionProps extends HTMLMotionProps<"div"> {
+  delay?: number;
+}
+
+const AnimatedSection = ({ children, delay, className, initial, whileInView, transition, viewport }: AnimatedSectionProps) => {
   return (
     <motion.div
       className={className}
