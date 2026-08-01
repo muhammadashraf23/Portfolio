@@ -1,10 +1,16 @@
 export interface Project {
   title: string;
+  slug: string;
   description: string;
+  overview: string;
+  challenge: string;
+  solution: string;
+  outcome: string;
   technologies: string[];
   liveDemo: string;
   github: string;
   image: string;
+  highlights: string[];
 }
 
 export interface Skill {

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import AnimatedSection from "./AnimatedSection";
+import SectionContainer from "./SectionContainer";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -44,7 +45,7 @@ const Contact = () => {
     >
       {/* Background gradients removed for global layout consistency */}
 
-      <div className="container mx-auto px-4 relative z-10">
+      <SectionContainer className="relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-gradient">
           Get In Touch
         </h2>
@@ -55,7 +56,7 @@ const Contact = () => {
           ⚡ I'll respond within 24 hours
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Form */}
           <AnimatedSection
             initial={{ x: -50, opacity: 0 }}
@@ -168,7 +169,7 @@ const Contact = () => {
             </AnimatedSection>
           </div>
         </div>
-      </div>
+      </SectionContainer>
     </motion.section>
   );
 };

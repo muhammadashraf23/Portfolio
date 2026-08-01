@@ -2,21 +2,22 @@
 import React from "react";
 import AnimatedSection from './AnimatedSection';
 import { experiences } from '@/data/experience';
+import SectionContainer from './SectionContainer';
 
 const Experience = () => {
   return (
     <section id="experience" className="py-20 flex flex-col items-center justify-center gap-10 relative z-20 overflow-hidden">
       {/* Background gradients removed for global layout consistency */}
 
-      <div className="container mx-auto px-4 relative z-10">
+      <SectionContainer className="relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-gradient">
           Work Experience
         </h2>
 
         {/* Refined Timeline Line */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-zinc-300 hidden md:block" />
+        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-zinc-300 hidden md:block top-0" />
 
-        <div className="w-full flex flex-col gap-16 max-w-5xl mx-auto">
+        <div className="w-full flex flex-col gap-16">
           {experiences.map((experience, index) => (
             <div key={index} className={`flex items-center w-full ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
               <AnimatedSection
@@ -52,7 +53,7 @@ const Experience = () => {
             </div>
           ))}
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 };

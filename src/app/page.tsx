@@ -13,7 +13,7 @@ import Contact from "@/components/Contact";
 export default function Home() {
   return (
     <div className="bg-background min-h-screen w-full flex flex-col items-center">
-      <main className="w-full max-w-7xl px-4 sm:px-6 md:px-10 flex flex-col items-center">
+      <main className="w-full flex flex-col items-stretch">
         <HeroSection />
         
         <Suspense fallback={<div className="h-20 w-full flex items-center justify-center text-sm text-zinc-500">Loading...</div>}>

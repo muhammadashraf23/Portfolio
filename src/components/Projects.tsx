@@ -1,12 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { projects } from "@/data/projects";
+import SectionContainer from "@/components/SectionContainer";
 
 const Projects = () => {
   return (
     <section id="projects" aria-label="Selected Projects" className="py-24 text-[#0a0a0a] relative z-20 overflow-hidden bg-background">
-      <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
+      <SectionContainer className="relative z-10">
         
         {/* Section Header */}
         <div className="mb-20 md:mb-32 max-w-2xl">
@@ -22,7 +24,7 @@ const Projects = () => {
         </div>
 
         {/* Projects List */}
-        <div className="flex flex-col gap-24 md:gap-40 relative">
+        <div className="flex flex-col gap-16 md:gap-24 relative">
           {projects.map((project, index) => {
             const isEven = index % 2 === 0;
             const projectNumber = (index + 1).toString().padStart(2, '0');
@@ -40,7 +42,7 @@ const Projects = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   viewport={{ once: true, margin: "-100px" }}
-                  className="w-full md:w-[55%] relative group"
+                  className="w-full md:w-[50%] relative group"
                 >
                   <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-zinc-200 bg-zinc-100 aspect-[16/10] transition-transform duration-500 group-hover:scale-[1.02]">
                     <div className="absolute inset-0 bg-zinc-200/50 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
@@ -85,8 +87,8 @@ const Projects = () => {
                   </p>
 
                   {/* CTAs */}
-                  <div className="flex items-center gap-6 font-medium">
-                    {project.liveDemo !== "#" && (
+                  <div className="flex flex-wrap items-center gap-4 font-medium">
+                    {project.liveDemo && project.liveDemo !== "#" && (
                       <a 
                         href={project.liveDemo} 
                         target="_blank" 
@@ -99,7 +101,16 @@ const Projects = () => {
                         </svg>
                       </a>
                     )}
-                    {project.github !== "#" && (
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="flex items-center gap-2 rounded-full border border-zinc-300 px-4 py-2 text-sm font-semibold text-zinc-700 transition-colors hover:border-[#0a0a0a] hover:text-[#0a0a0a]"
+                    >
+                      <span>View Details</span>
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </Link>
+                    {project.github && project.github !== "#" && (
                       <a 
                         href={project.github} 
                         target="_blank" 
@@ -182,7 +193,7 @@ const Projects = () => {
           </a>
         </div>
 
-      </div>
+      </SectionContainer>
     </section>
   );
 };

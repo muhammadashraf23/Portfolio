@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
+import SectionContainer from "@/components/SectionContainer";
 import { skills } from "@/data/skills";
 
 const SkillsSection = () => {
@@ -9,12 +10,12 @@ const SkillsSection = () => {
     <section id="skills" className="py-20 text-[#0a0a0a] relative z-20 overflow-hidden">
       {/* Background gradients removed for global layout consistency */}
 
-      <div className="container mx-auto px-4 relative z-10">
+      <SectionContainer className="relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-gradient">
           Skills & Technologies
         </h2>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 md:gap-6 justify-items-center max-w-6xl mx-auto">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 md:gap-6 justify-items-center">
           {skills.map((skill, index) => (
             <AnimatedSection
               key={skill.name}
@@ -55,7 +56,7 @@ const SkillsSection = () => {
             </AnimatedSection>
           ))}
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 };

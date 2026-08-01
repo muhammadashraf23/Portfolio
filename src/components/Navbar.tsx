@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import SectionContainer from "./SectionContainer";
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -42,8 +43,9 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="sticky top-0 w-full flex justify-center z-[100] px-4 pointer-events-none transition-shadow duration-300 shadow-[0_2px_16px_rgba(0,0,0,0.06)] bg-[#f0f0f0]/80 backdrop-blur-xl">
-      <nav className="pointer-events-auto h-[55px] md:h-[65px] glass-pill flex items-center justify-between px-4 md:px-8 w-full max-w-[850px] border border-[#0a0a0a]/30 shadow-none rounded-full bg-[#f0f0f0]/80 backdrop-blur-xl">
+    <div className="sticky top-0 w-full z-[100] pointer-events-none transition-shadow duration-300 shadow-[0_2px_16px_rgba(0,0,0,0.06)] bg-[#f0f0f0]/80 backdrop-blur-xl">
+      <SectionContainer className="relative flex justify-center py-0 pointer-events-none">
+      <nav className="pointer-events-auto h-[55px] md:h-[65px] glass-pill flex items-center justify-between px-4 md:px-8 w-full border border-[#0a0a0a]/30 shadow-none rounded-full bg-[#f0f0f0]/80 backdrop-blur-xl">
 
         {/* Logo */}
         <Link href="#about" className="flex items-center group z-50 mr-4 md:mr-8">
@@ -119,7 +121,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ type: "spring", bounce: 0.3, duration: 0.4 }}
-            className="absolute top-[70px] left-4 right-4 glass-card rounded-2xl flex flex-col p-4 gap-1 md:hidden border border-[#0a0a0a]/20 pointer-events-auto shadow-[0_16px_48px_rgba(0,0,0,0.13)] bg-[#f0f0f0]/95 backdrop-blur-2xl"
+            className="absolute top-[70px] left-0 right-0 glass-card rounded-2xl flex flex-col p-4 gap-1 md:hidden border border-[#0a0a0a]/20 pointer-events-auto shadow-[0_16px_48px_rgba(0,0,0,0.13)] bg-[#f0f0f0]/95 backdrop-blur-2xl"
           >
             {navLinks.map((link) => {
               const isActive = link.href === `#${activeSection}`;
@@ -156,6 +158,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      </SectionContainer>
     </div>
   );
 };

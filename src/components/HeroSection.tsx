@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import MagneticButton from "./MagneticButton";
+import SectionContainer from "./SectionContainer";
 
 export default function HeroSection() {
   return (
@@ -12,8 +13,9 @@ export default function HeroSection() {
       <div className="bg-cyber-grid pointer-events-none opacity-60"></div>
       {/* Content Overlay */}
       <motion.section 
-        className="relative flex flex-col items-center justify-center w-full min-h-screen px-4 md:px-12 lg:px-20 z-[20] pt-[100px] md:pt-[120px] pb-[100px] max-w-[900px] mx-auto gap-10"
+        className="relative flex flex-col items-center justify-center w-full min-h-screen z-[20] pt-[100px] md:pt-[120px] pb-[100px] gap-10"
       >
+        <SectionContainer className="relative flex flex-col items-start justify-center flex-1">
         {/* LEFT COLUMN: TYPOGRAPHY & CTAs */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -76,6 +78,8 @@ export default function HeroSection() {
             </MagneticButton>
           </motion.div>
         </motion.div>
+
+        </SectionContainer>
 
         {/* Minimal Scroll Indicator */}
         <motion.div

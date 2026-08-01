@@ -2,6 +2,7 @@
 
 import AnimatedSection from './AnimatedSection';
 import Image from 'next/image';
+import SectionContainer from './SectionContainer';
 
 export default function About() {
   const quickFacts = [
@@ -15,12 +16,13 @@ export default function About() {
     <section
       id="about"
       aria-label="About Muhammad Ashraf"
-      className="min-h-screen flex flex-col justify-center items-center px-6 md:px-20 py-20 text-[#0a0a0a] relative z-20 overflow-hidden"
+      className="min-h-screen flex flex-col justify-center items-center py-20 text-[#0a0a0a] relative z-20 overflow-hidden"
     >
       {/* Background gradients removed for global layout consistency */}
 
+      <SectionContainer>
       {/* Content Container */}
-      <article className="max-w-6xl w-full relative z-10">
+      <article className="w-full relative z-10">
 
         {/* Subtle Corner Accents */}
         <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-accent-cyan-500/50 rounded-tl-3xl" />
@@ -87,6 +89,7 @@ export default function About() {
           </AnimatedSection>
         </div>
       </article>
+      </SectionContainer>
     </section>
   );
 }

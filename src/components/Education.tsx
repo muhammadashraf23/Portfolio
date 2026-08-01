@@ -2,18 +2,19 @@
 import React from "react";
 import AnimatedSection from './AnimatedSection';
 import { education } from '@/data/education';
+import SectionContainer from './SectionContainer';
 
 const Education = () => {
   return (
     <section id="education" className="py-20 z-20 relative overflow-hidden">
       {/* Background gradients removed for global layout consistency */}
 
-      <div className="container mx-auto px-4 relative z-10">
+      <SectionContainer className="relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-gradient">
           Education & Certifications
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
           {education.map((item, index) => (
             <AnimatedSection
               key={index}
@@ -52,7 +53,7 @@ const Education = () => {
             </AnimatedSection>
           ))}
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 };
