@@ -88,7 +88,7 @@ export default function HeroSection() {
           transition={{ duration: 0.5, delay: 0.7 }}
           className="absolute bottom-6 md:bottom-10 left-1/2 transform -translate-x-1/2 hidden md:block"
         >
-          <a href="#skills" className="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity">
+          <a href="#skills" className="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity" aria-label="Scroll down to Skills section">
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}

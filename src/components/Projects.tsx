@@ -12,7 +12,7 @@ const Projects = () => {
         
         {/* Section Header */}
         <div className="mb-20 md:mb-32 max-w-2xl">
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-500 mb-4 block">
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-700 mb-4 block">
             Featured Projects
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] font-orbitron tracking-tight text-[#0a0a0a]">
