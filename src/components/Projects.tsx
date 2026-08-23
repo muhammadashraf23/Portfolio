@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { projects } from "@/data/projects";
 import SectionContainer from "@/components/SectionContainer";
@@ -46,11 +47,13 @@ const Projects = () => {
                 >
                   <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-zinc-200 bg-zinc-100 aspect-[16/10] transition-transform duration-500 group-hover:scale-[1.02]">
                     <div className="absolute inset-0 bg-zinc-200/50 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-                    <img
+                    <Image
                       src={project.image}
                       alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover object-top"
                       loading="lazy"
-                      className="w-full h-full object-cover object-top"
                     />
                   </div>
                 </motion.div>

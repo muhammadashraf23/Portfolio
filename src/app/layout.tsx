@@ -2,6 +2,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import ClientOnlyEffects from "@/components/ClientOnlyEffects";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -57,8 +58,6 @@ export const metadata = {
   },
 };
 
-import CursorTrail from "@/components/CursorTrail";
-import SmoothScrolling from "@/components/SmoothScrolling";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const jsonLd = {
@@ -81,6 +80,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        {/* Preconnect to Google Fonts for faster DNS + TLS handshake */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Non-blocking font load — replaces render-blocking @import in CSS */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&display=swap"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -92,11 +99,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="noise-overlay pointer-events-none"></div>
         {/* Soft radial background accent for modern look */}
         <div className="fixed inset-0 -z-10 bg-gradient-radial from-accent-cyan-100/30 via-background to-background opacity-70" aria-hidden="true"></div>
-        <SmoothScrolling>
-          <CursorTrail />
+        <ClientOnlyEffects>
           <Navbar />
           <main className="flex flex-col items-center w-full min-h-screen">{children}</main>
-        </SmoothScrolling>
+        </ClientOnlyEffects>
       </body>
     </html>
   );
