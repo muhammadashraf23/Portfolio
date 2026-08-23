@@ -19,18 +19,18 @@ const geistMono = localFont({
 export const metadata = {
   metadataBase: new URL("https://muhammad-ashraf.vercel.app"),
   title: {
-    default: "Muhammad Ashraf | Expert Full Stack Developer",
+    default: "Muhammad Ashraf | Full Stack Developer",
     template: "%s | Muhammad Ashraf"
   },
   description: "Senior Full Stack Developer specializing in React, Next.js, Node.js, and Mobile App Development. Building high-performance, scalable web solutions with a focus on user experience.",
-  keywords: ["Muhammad Ashraf", "Full Stack Developer", "Software Engineer", "React Developer", "Next.js Expert", "Web Development Pakistan", "MERN Stack"],
+  keywords: ["Muhammad Ashraf", "Full Stack Developer", "Software Engineer", "React Developer", "Next.js Developer", "Web Development Pakistan", "MERN Stack"],
   authors: [{ name: "Muhammad Ashraf" }],
   creator: "Muhammad Ashraf",
   alternates: {
     canonical: "https://muhammad-ashraf.vercel.app",
   },
   openGraph: {
-    title: "Muhammad Ashraf | Full Stack Expert",
+    title: "Muhammad Ashraf | Full Stack Developer",
     description: "Professional Portfolio showcasing innovative web and mobile solutions.",
     url: "https://muhammad-ashraf.vercel.app",
     siteName: "Muhammad Ashraf Portfolio",
@@ -47,7 +47,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Ashraf | Full Stack Expert",
+    title: "Muhammad Ashraf | Full Stack Developer",
     description: "Building the future of web and mobile applications.",
     images: ["/images/og-image.png"],
   },

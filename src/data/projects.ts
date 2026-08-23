@@ -2,23 +2,24 @@ import { Project } from "@/types";
 
 export const projects: Project[] = [
   {
-    title: "WhatsApp Ledger System",
-    slug: "whatsapp-ledger-system",
+    title: "Business Operations Dashboard",
+    slug: "choco-north",
     description:
-      "A fast, rule-based ledger system converting WhatsApp messages into structured records. Features automated weekly/monthly reporting, person-wise balance tracking, and secure admin management.",
+      "A private factory operations dashboard for recording Orders, Expenses, tracking inventory, managing customer order history, and generating financial reports.",
     overview:
-      "A lightweight internal finance workflow that transforms noisy WhatsApp messages into clean, structured ledger entries for faster reporting and account visibility.",
+      "A comprehensive business operations management dashboard built with Next.js, Firebase Authentication, and Cloud Firestore. It enables efficient tracking of orders, expenses, and inventory while providing real-time financial reporting and automated backups.",
     challenge:
-      "The team needed a practical way to convert informal conversations into trustworthy financial records without slowing down daily operations.",
+      "The factory needed a unified, robust system to manage orders, track product inventory, and monitor expenses securely without relying on informal or scattered communication.",
     solution:
-      "I built a rule-driven processing experience with structured data capture, administrator controls, and automated reporting tailored for weekly and monthly reviews.",
+      "I built a role-based dashboard with advanced order parsing, inventory tracking, customer history management, and automated daily Google Sheets backups.",
     outcome:
-      "The system now makes financial tracking faster, more searchable, and easier to audit while reducing manual data-entry time.",
+      "The dashboard streamlined factory operations by enforcing structured data, providing real-time inventory updates, and delivering clear, actionable financial reports.",
     technologies: ["Next.js", "Firebase", "TypeScript", "TailwindCSS"],
     liveDemo: "",
     github: "https://github.com/MuhammadAshraf23",
     image: "/images/projects/ledger.png",
-    highlights: ["Automated weekly reports", "Person-wise balance tracking", "Secure admin access"],
+    video: "/videos/projects/Choco-North.mp4",
+    highlights: ["Order and Expense Tracking", "Real-time Inventory", "Automated Backups"],
   },
   {
     title: "Baltistan Baking Store",

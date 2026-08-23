@@ -127,15 +127,28 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               </p>
             </div>
 
-            <div className="rounded-[1.5rem] border border-dashed border-zinc-300 bg-zinc-50 p-6">
-              <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold">Videos</h3>
-                <span className="text-sm text-zinc-500">Folder ready</span>
+            {project.video ? (
+              <div className="overflow-hidden rounded-[1.5rem] border border-zinc-200 bg-black">
+                <video
+                  src={project.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls
+                  className="h-full w-full object-cover"
+                />
               </div>
-              <p className="mt-3 text-sm leading-7 text-zinc-600">
-                Add walkthroughs or product clips to <span className="font-semibold">/public/videos/projects</span> and link them from this page later.
-              </p>
-            </div>
+            ) : (
+              <div className="flex flex-col items-center justify-center rounded-[1.5rem] border border-zinc-200 bg-zinc-50 p-10 text-center">
+                <svg className="mb-4 h-10 w-10 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <h3 className="text-lg font-semibold text-zinc-700">Demo Video</h3>
+                <p className="mt-2 text-sm text-zinc-500">Available soon</p>
+              </div>
+            )}
           </div>
 
           <div className="mt-8 rounded-[1.5rem] border border-zinc-200 bg-zinc-50 p-6">
