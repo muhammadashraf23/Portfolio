@@ -116,19 +116,43 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </p>
           </div>
 
-          <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-[1.5rem] border border-dashed border-zinc-300 bg-zinc-50 p-6">
-              <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold">Images</h3>
-                <span className="text-sm text-zinc-500">Folder ready</span>
+          <div className="mt-8 grid gap-8">
+            {project.gallery && project.gallery.length > 0 ? (
+              <div className="grid gap-8 sm:grid-cols-2">
+                {project.gallery.map((item, idx) => {
+                  const isMobile = item.src.includes("mobile");
+                  return (
+                    <div
+                      key={idx}
+                      className={`group flex flex-col overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-zinc-50/50 p-4 transition-all duration-300 hover:border-zinc-300 hover:shadow-lg ${
+                        isMobile ? "sm:col-span-1" : "sm:col-span-2 lg:col-span-1"
+                      }`}
+                    >
+                      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[1.25rem] border border-zinc-200/80 bg-zinc-100">
+                        <Image
+                          src={item.src}
+                          alt={item.title}
+                          fill
+                          className={`object-cover ${isMobile ? "object-top" : "object-top"} transition-transform duration-500 group-hover:scale-[1.02]`}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                      </div>
+                      <div className="px-2 pt-4 pb-1">
+                        <h4 className="text-base font-bold text-zinc-900">{item.title}</h4>
+                        {item.caption && (
+                          <p className="mt-1 text-sm leading-relaxed text-zinc-600">
+                            {item.caption}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-              <p className="mt-3 text-sm leading-7 text-zinc-600">
-                Add hero shots, UI mockups, or before/after visuals to <span className="font-semibold">/public/images/projects/media/{project.slug}</span>.
-              </p>
-            </div>
+            ) : null}
 
             {project.video ? (
-              <div className="overflow-hidden rounded-[1.5rem] border border-zinc-200 bg-black">
+              <div className="overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-black">
                 <video
                   src={project.video}
                   autoPlay
@@ -139,16 +163,16 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   className="h-full w-full object-cover"
                 />
               </div>
-            ) : (
+            ) : !project.gallery || project.gallery.length === 0 ? (
               <div className="flex flex-col items-center justify-center rounded-[1.5rem] border border-zinc-200 bg-zinc-50 p-10 text-center">
                 <svg className="mb-4 h-10 w-10 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <h3 className="text-lg font-semibold text-zinc-700">Demo Video</h3>
-                <p className="mt-2 text-sm text-zinc-500">Available soon</p>
+                <h3 className="text-lg font-semibold text-zinc-700">Visual Media</h3>
+                <p className="mt-2 text-sm text-zinc-500">Screenshots and walkthroughs coming soon</p>
               </div>
-            )}
+            ) : null}
           </div>
 
           <div className="mt-8 rounded-[1.5rem] border border-zinc-200 bg-zinc-50 p-6">

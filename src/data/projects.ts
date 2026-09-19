@@ -25,20 +25,37 @@ export const projects: Project[] = [
     title: "Baltistan Baking Store",
     slug: "baltistan-baking-store",
     description:
-      "A premium e-commerce experience built for a baking and grocery brand. Features dynamic cart management, secure checkout, and a sleek, high-conversion UI design.",
+      "A high-performance modern e-commerce platform for baking supplies and artisanal ingredients, deployed serverless on Cloudflare Workers with edge database persistence.",
     overview:
-      "A polished storefront experience for a baking and grocery brand with product discovery, cart flow, and a modern purchasing experience.",
+      "A comprehensive, production-grade e-commerce application crafted for Baltistan Baking Store. Deployed at the edge using Cloudflare Workers and Next.js, it offers instant page loads, dynamic multi-category product filtering, search, cart management, and a friction-free checkout flow.",
     challenge:
-      "The brand needed a storefront that felt premium, responsive, and conversion-focused while remaining simple to maintain.",
+      "The client required an ultra-fast, modern web presence capable of handling hundreds of baking products, category hierarchies, and responsive shopping experiences with low latency across Pakistan and globally.",
     solution:
-      "I designed and built a refined e-commerce interface with cart logic, product pages, and a clean checkout experience that supports the brand story.",
+      "Engineered an edge-first architecture combining Next.js 15, OpenNext, and Cloudflare Workers, backed by Drizzle ORM and LibSQL for fast database queries. Designed a warm, premium culinary UI with custom hero banners and dynamic cart interactions.",
     outcome:
-      "The experience now presents the business in a stronger digital light with a more premium and reliable shopping experience.",
-    technologies: ["Next.js", "Firebase", "Redux", "TailwindCSS"],
-    liveDemo: "https://baltistanbakingstore.vercel.app/",
+      "Delivered a sub-second e-commerce storefront with 65+ curated baking products, seamless mobile responsiveness, and zero-cold-start edge hosting.",
+    technologies: ["Next.js 15", "Cloudflare Workers", "Drizzle ORM", "TypeScript", "TailwindCSS", "LibSQL"],
+    liveDemo: "https://baltistan-baking-store.muhammadashraf2921323.workers.dev/",
     github: "https://github.com/MuhammadAshraf23/Baltistan-baking-Grocery",
     image: "/images/projects/baking-store.png",
-    highlights: ["Premium storefront design", "Dynamic cart experience", "Fast mobile-first UX"],
+    highlights: ["Edge Deployment on Cloudflare Workers", "Sub-second Page Speeds", "Dynamic Search & Category Filtering", "Mobile-First Shopping Flow"],
+    gallery: [
+      {
+        title: "Storefront & Featured Products",
+        caption: "Hero section featuring artisanal cheeses, quick delivery assurances, and direct category discovery.",
+        src: "/images/projects/media/baltistan-baking-store/desktop-home.png",
+      },
+      {
+        title: "Product Catalog & Filtering",
+        caption: "Fast real-time search, sorting options, and dynamic category switching across 65+ catalog items.",
+        src: "/images/projects/media/baltistan-baking-store/desktop-products.png",
+      },
+      {
+        title: "Responsive Mobile Experience",
+        caption: "Polished touch-friendly mobile interface with persistent navigation, quick cart access, and compact product cards.",
+        src: "/images/projects/media/baltistan-baking-store/mobile-home.png",
+      },
+    ],
   },
   {
     title: "Zoomaro",

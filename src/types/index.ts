@@ -12,6 +12,11 @@ export interface Project {
   image: string;
   video?: string;
   highlights: string[];
+  gallery?: {
+    title: string;
+    caption?: string;
+    src: string;
+  }[];
 }
 
 export interface Skill {
