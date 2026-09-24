@@ -65,7 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@type": "Person",
     "name": "Muhammad Ashraf",
     "url": "https://muhammad-ashraf.vercel.app",
-    "image": "https://muhammad-ashraf.vercel.app/images/profile_photo.png",
+    "image": "https://muhammad-ashraf.vercel.app/images/new_profile_photo.png",
     "jobTitle": "Full Stack Developer",
     "alumniOf": {
       "@type": "CollegeOrUniversity",

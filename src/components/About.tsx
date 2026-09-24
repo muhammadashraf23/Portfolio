@@ -16,7 +16,7 @@ export default function About() {
     <section
       id="about"
       aria-label="About Muhammad Ashraf"
-      className="min-h-0 md:min-h-screen flex flex-col justify-center items-center py-10 md:py-20 text-[#0a0a0a] relative z-20 overflow-hidden"
+      className="min-h-0 md:min-h-screen flex flex-col justify-center items-center py-8 sm:py-14 md:py-20 text-[#0a0a0a] relative z-20 overflow-hidden"
     >
       {/* Background gradients removed for global layout consistency */}
 
@@ -28,7 +28,7 @@ export default function About() {
         <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-accent-cyan-500/50 rounded-tl-3xl" />
         <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-accent-purple-500/50 rounded-br-3xl" />
 
-        <div className="flex flex-col md:flex-row items-center gap-12">
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
           {/* Image Section */}
           <AnimatedSection
             className="flex-shrink-0"
@@ -37,13 +37,14 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-accent-purple-500 to-accent-cyan-500 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-r from-accent-purple-500 to-accent-cyan-500 rounded-2xl sm:rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
               <Image
-                src="/images/profile_photo.png"
+                src="/images/new_profile_photo.png"
                 alt="Muhammad Ashraf Profile"
-                width={288}
-                height={288}
-                className="rounded-full shadow-2xl object-cover max-sm:w-52 max-sm:h-52 relative z-10 border-4 border-accent-purple-500/30 group-hover:border-accent-cyan-500/50 transition-colors duration-500"
+                width={320}
+                height={400}
+                className="w-56 h-72 sm:w-64 sm:h-80 md:w-72 md:h-96 rounded-2xl sm:rounded-3xl shadow-2xl object-cover object-top relative z-10 border-4 border-accent-purple-500/30 group-hover:border-accent-cyan-500/50 transition-colors duration-500"
+                priority
               />
             </div>
           </AnimatedSection>
@@ -55,7 +56,7 @@ export default function About() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-gradient">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-12 text-center text-gradient">
               About Me
             </h2>
             <div className="space-y-4">
