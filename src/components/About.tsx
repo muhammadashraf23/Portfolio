@@ -16,7 +16,7 @@ export default function About() {
     <section
       id="about"
       aria-label="About Muhammad Ashraf"
-      className="min-h-screen flex flex-col justify-center items-center py-20 text-[#0a0a0a] relative z-20 overflow-hidden"
+      className="min-h-0 md:min-h-screen flex flex-col justify-center items-center py-10 md:py-20 text-[#0a0a0a] relative z-20 overflow-hidden"
     >
       {/* Background gradients removed for global layout consistency */}
 

@@ -8,7 +8,7 @@ import SectionContainer from "@/components/SectionContainer";
 
 const Projects = () => {
   return (
-    <section id="projects" aria-label="Selected Projects" className="py-24 text-[#0a0a0a] relative z-20 overflow-hidden bg-background">
+    <section id="projects" aria-label="Selected Projects" className="py-24 max-sm:py-2 text-[#0a0a0a] relative z-20 overflow-hidden bg-background">
       <SectionContainer className="relative z-10">
         
         {/* Section Header */}

@@ -6,7 +6,7 @@ import SectionContainer from './SectionContainer';
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 flex flex-col items-center justify-center gap-10 relative z-20 overflow-hidden">
+    <section id="experience" className="py-20 max-sm:py-2 flex flex-col items-center justify-center gap-10 relative z-20 overflow-hidden">
       {/* Background gradients removed for global layout consistency */}
 
       <SectionContainer className="relative z-10">
