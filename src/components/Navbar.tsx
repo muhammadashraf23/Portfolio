@@ -52,12 +52,11 @@ const Navbar = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-[#a855f7] blur-md rounded-full opacity-50 group-hover:opacity-80 transition-opacity" />
             <Image
-              src="/images/logo_square.png"
-              alt="Muhammad Ashraf Logo"
-              width={38}
-              height={38}
-              className="cursor-pointer rounded-full relative z-10 w-[35px] h-[35px] md:w-[38px] md:h-[38px] object-cover"
-              priority
+              src="/images/logo.PNG"
+              alt="logo"
+              width={35}
+              height={35}
+              className="cursor-pointer rounded-full relative z-10 md:w-[38px] md:h-[38px]"
             />
           </div>
           <div className="font-bold ml-3 text-[#0a0a0a]/95 group-hover:text-[#9333ea] transition-colors whitespace-nowrap hidden sm:flex flex-col font-orbitron text-xs md:text-sm leading-tight tracking-wider">

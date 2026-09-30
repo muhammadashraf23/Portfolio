@@ -38,11 +38,11 @@ const Footer = () => {
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#a855f7] to-[#22d3ee] rounded-full blur-md opacity-30 group-hover:opacity-60 transition-opacity"></div>
                 <Image
-                  src="/images/logo_square.png"
-                  alt="Muhammad Ashraf Logo"
+                  src="/images/logo.PNG"
+                  alt="Logo"
                   width={42}
                   height={42}
-                  className="rounded-full relative z-10 border border-black/10 object-cover"
+                  className="rounded-full relative z-10 border border-black/10"
                 />
               </div>
               <span className="font-bold text-xl text-gradient font-orbitron tracking-wider">
