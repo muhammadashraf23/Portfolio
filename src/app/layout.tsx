@@ -1,8 +1,15 @@
-// app/layout.js or your layout file
 import localFont from "next/font/local";
+import { Orbitron } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import ClientOnlyEffects from "@/components/ClientOnlyEffects";
+
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  variable: "--font-orbitron",
+  weight: ["600", "700", "900"],
+  display: "swap",
+});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -80,21 +87,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* Preconnect to Google Fonts for faster DNS + TLS handshake */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Non-blocking font load — replaces render-blocking @import in CSS */}
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&display=swap"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground overflow-x-hidden min-h-screen relative`}
+        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} antialiased bg-background text-foreground overflow-x-hidden min-h-screen relative`}
       >
         <div className="noise-overlay pointer-events-none"></div>
         {/* Soft radial background accent for modern look */}

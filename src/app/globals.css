@@ -1,4 +1,4 @@
-/* Google Fonts loaded via <link> in layout.tsx to avoid render-blocking @import */
+/* Font loading handled via next/font in layout.tsx for zero render-blocking requests */
 
 @tailwind base;
 @tailwind components;

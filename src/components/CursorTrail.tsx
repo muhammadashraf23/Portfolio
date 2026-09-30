@@ -1,12 +1,14 @@
-﻿"use client";
+"use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function CursorTrail() {
+    const [mounted, setMounted] = useState(false);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
 
     useEffect(() => {
+        setMounted(true);
         const isMobile = window.innerWidth < 768 || ("ontouchstart" in window);
         if (isMobile) return;
 
@@ -47,6 +49,8 @@ export default function CursorTrail() {
         damping: 28,
         mass: 0.5,
     };
+
+    if (!mounted) return null;
 
     return (
         <div className="hidden md:block pointer-events-none fixed inset-0 z-[9999]">
