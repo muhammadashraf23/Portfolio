@@ -20,26 +20,47 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = navLinks
-        .filter((link) => link.href.startsWith("#"))
-        .map((link) => link.href.substring(1));
-      let current = "";
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 150 && rect.bottom >= 150) {
-            current = section;
-          }
-        }
-      }
-      setActiveSection(current);
-    };
+    const sections = navLinks
+      .filter((link) => link.href.startsWith("#"))
+      .map((link) => link.href.substring(1));
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    const visibleSections = new Map<string, number>();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            visibleSections.set(entry.target.id, entry.intersectionRatio);
+          } else {
+            visibleSections.delete(entry.target.id);
+          }
+        });
+
+        let maxRatio = -1;
+        let mostVisible = "";
+        visibleSections.forEach((ratio, id) => {
+          if (ratio > maxRatio) {
+            maxRatio = ratio;
+            mostVisible = id;
+          }
+        });
+
+        if (mostVisible) {
+          setActiveSection(mostVisible);
+        }
+      },
+      {
+        rootMargin: "-80px 0px -40% 0px",
+        threshold: [0, 0.2, 0.5, 0.8],
+      }
+    );
+
+    sections.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   return (

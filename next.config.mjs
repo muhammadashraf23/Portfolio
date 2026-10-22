@@ -6,14 +6,14 @@ const nextConfig = {
   // Auto-convert images to AVIF/WebP and serve correct sizes
   images: {
     formats: ["image/avif", "image/webp"],
-    remotePatterns: [],
+    deviceSizes: [320, 384, 420, 640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 224, 256, 320],
   },
 
-  // Tree-shake framer-motion to only include used exports (reduces JS bundle)
+  // Tree-shake large packages to reduce JS bundle
   experimental: {
-    optimizePackageImports: ["framer-motion"],
+    optimizePackageImports: ["framer-motion", "react-icons"],
   },
 };
 
 export default nextConfig;
-

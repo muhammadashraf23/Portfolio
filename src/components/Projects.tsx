@@ -51,7 +51,7 @@ const Projects = () => {
                       src={project.image}
                       alt={project.title}
                       fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 500px"
                       className="object-cover object-top"
                       loading="lazy"
                     />
