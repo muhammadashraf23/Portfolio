@@ -33,7 +33,7 @@ export default function About() {
                 <Image
                   src="/images/new_profile_photo.png"
                   alt="Muhammad Ashraf Profile"
-                  width={320}
+                  width={300}
                   height={400}
                   sizes="(max-width: 640px) 224px, (max-width: 768px) 256px, 288px"
                   className="w-56 h-72 sm:w-64 sm:h-80 md:w-72 md:h-96 rounded-2xl sm:rounded-3xl shadow-2xl object-cover object-top relative z-10 border-4 border-accent-purple-500/30 group-hover:border-accent-cyan-500/50 transition-colors duration-500"
