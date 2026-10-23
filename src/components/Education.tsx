@@ -10,7 +10,7 @@ const Education = () => {
       {/* Background gradients removed for global layout consistency */}
 
       <SectionContainer className="relative z-10">
-        <h2 className="text-4xl md:text-5xl font-black mb-12 text-center font-orbitron tracking-tight text-[#0a0a0a]">
+        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-gradient">
           Education & Certifications
         </h2>
 
