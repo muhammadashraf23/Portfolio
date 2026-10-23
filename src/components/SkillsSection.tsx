@@ -9,7 +9,7 @@ const SkillsSection = () => {
   return (
     <section id="skills" className="py-16 md:py-20 text-[#0a0a0a] relative z-20 overflow-hidden">
       <SectionContainer className="relative z-10">
-        <h2 className="text-3xl md:text-5xl font-bold mb-8 md:mb-12 text-center text-gradient">
+        <h2 className="text-3xl md:text-5xl font-black mb-8 md:mb-12 text-center font-orbitron tracking-tight text-[#0a0a0a]">
           Skills & Technologies
         </h2>
 

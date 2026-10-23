@@ -16,49 +16,54 @@ export default function About() {
     <section
       id="about"
       aria-label="About Muhammad Ashraf"
-      className="min-h-0 md:min-h-screen flex flex-col justify-center items-center py-8 sm:py-14 md:py-20 text-[#0a0a0a] relative z-20 overflow-hidden"
+      className="py-16 md:py-24 text-[#0a0a0a] relative z-20 overflow-hidden flex flex-col justify-center items-center"
     >
       <SectionContainer>
-        {/* Content Container */}
         <article className="w-full relative z-10">
-          {/* Subtle Corner Accents */}
-          <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-accent-cyan-500/50 rounded-tl-3xl" />
-          <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-accent-purple-500/50 rounded-br-3xl" />
-
-          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-            {/* Image Section - rendered without hiding opacity to ensure instant LCP */}
-            <div className="flex-shrink-0">
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-14 lg:gap-16">
+            
+            {/* Image Column */}
+            <div className="flex-shrink-0 w-full sm:w-auto flex justify-center">
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-accent-purple-500 to-accent-cyan-500 rounded-2xl sm:rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
+                {/* Subtle soft backdrop glow */}
+                <div className="absolute inset-0 bg-gradient-to-r from-accent-purple-500/20 to-accent-cyan-500/20 rounded-3xl blur-2xl opacity-40 group-hover:opacity-70 transition-opacity duration-500" />
+                
                 <Image
                   src="/images/new_profile_photo.png"
                   alt="Muhammad Ashraf Profile"
                   width={300}
                   height={400}
-                  sizes="(max-width: 640px) 224px, (max-width: 768px) 256px, 288px"
-                  className="w-56 h-72 sm:w-64 sm:h-80 md:w-72 md:h-96 rounded-2xl sm:rounded-3xl shadow-2xl object-cover object-top relative z-10 border-4 border-accent-purple-500/30 group-hover:border-accent-cyan-500/50 transition-colors duration-500"
+                  sizes="(max-width: 640px) 224px, (max-width: 768px) 256px, (max-width: 1024px) 320px, 360px"
+                  className="w-56 h-72 sm:w-64 sm:h-80 md:w-80 md:h-[420px] lg:w-[340px] lg:h-[450px] rounded-3xl shadow-xl object-cover object-top relative z-10 border border-black/10 group-hover:border-black/30 transition-all duration-500"
                   priority
                 />
               </div>
             </div>
 
-            {/* Text Section / Quick Facts */}
+            {/* Text & Details Column */}
             <AnimatedSection
-              className="flex-1 text-center md:text-left"
-              initial={{ y: 30, opacity: 0 }}
+              className="flex-1 text-left w-full flex flex-col justify-start"
+              initial={{ y: 24, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-12 text-center text-gradient">
-                About Me
-              </h2>
-              <div className="space-y-4">
-                <p className="text-base md:text-xl text-zinc-700 leading-relaxed">
+              <div className="mb-6">
+                <span className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-600 mb-2 block font-orbitron">
+                  Who I Am
+                </span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-orbitron tracking-tight text-[#0a0a0a]">
+                  About Me
+                </h2>
+              </div>
+
+              <div className="space-y-4 text-zinc-700 text-sm sm:text-base md:text-lg leading-relaxed">
+                <p>
                   Full Stack Developer with expertise in building scalable, high-performance web and mobile applications.
                   I specialize in modern JavaScript frameworks including React, Vue.js, Next.js, and Nuxt, combined with
                   robust backend solutions using Node.js and both SQL and NoSQL databases.
                 </p>
-                <p className="text-base md:text-xl text-zinc-700 leading-relaxed">
+                <p>
                   Currently pursuing BS in Computer Science at UBIT, University of Karachi, while actively working on
                   real-world projects that solve actual problems. I'm passionate about writing clean, maintainable code
                   and creating exceptional user experiences that make a difference.
@@ -70,17 +75,18 @@ export default function About() {
                 {quickFacts.map((fact, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-3 p-4 rounded-xl bg-accent-purple-900/10 border border-accent-purple-500/20 hover:border-accent-cyan-500/40 transition-all group/fact hover:bg-accent-purple-900/20"
+                    className="flex items-center gap-3.5 p-4 rounded-2xl bg-white/70 border border-black/10 shadow-sm hover:border-black/30 hover:shadow-md transition-all group/fact"
                   >
-                    <span className="text-2xl filter drop-shadow-[0_0_8px_rgba(0,0,0,0.03)]" aria-hidden="true">{fact.icon}</span>
+                    <span className="text-2xl filter drop-shadow-sm" aria-hidden="true">{fact.icon}</span>
                     <div className="text-left">
-                      <span className="block text-[10px] text-zinc-600 uppercase font-bold tracking-widest">{fact.label}</span>
-                      <span className="text-sm md:text-base font-semibold text-[#0a0a0a] group-hover/fact:text-accent-cyan-300 transition-colors">{fact.value}</span>
+                      <span className="block text-[10px] text-zinc-500 uppercase font-bold tracking-widest font-orbitron">{fact.label}</span>
+                      <span className="text-sm md:text-base font-semibold text-[#0a0a0a]">{fact.value}</span>
                     </div>
                   </div>
                 ))}
               </div>
             </AnimatedSection>
+
           </div>
         </article>
       </SectionContainer>

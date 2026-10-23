@@ -22,7 +22,7 @@ body {
     background: #e8e6e3;
     background-attachment: fixed;
     color: #0a0a0a;
-    font-family: var(--font-inter), sans-serif;
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
 /* Cinematic Noise Overlay for Light Mode */
