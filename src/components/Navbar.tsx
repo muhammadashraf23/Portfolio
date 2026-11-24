@@ -3,14 +3,15 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionContainer from "./SectionContainer";
 
 const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
+  { name: "About", href: "/#about" },
+  { name: "Skills", href: "/#skills" },
+  { name: "Projects", href: "/#projects" },
+  { name: "Experience", href: "/#experience" },
   { name: "Resume", href: "/MUHAMMAD_ASHRAF_Resume.pdf", isExternal: true, download: true },
   { name: "GitHub", href: "https://github.com/muhammadashraf23", isExternal: true, newTab: true },
 ];
@@ -18,11 +19,17 @@ const navLinks = [
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const pathname = usePathname();
 
   useEffect(() => {
+    if (pathname !== "/") {
+      setActiveSection(pathname.startsWith("/projects") ? "projects" : "");
+      return;
+    }
+
     const sections = navLinks
-      .filter((link) => link.href.startsWith("#"))
-      .map((link) => link.href.substring(1));
+      .filter((link) => link.href.startsWith("/#"))
+      .map((link) => link.href.slice(2));
 
     const visibleSections = new Map<string, number>();
 
@@ -61,7 +68,7 @@ const Navbar = () => {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   return (
     <div className="sticky top-0 w-full z-[100] pointer-events-none transition-shadow duration-300 shadow-[0_2px_16px_rgba(0,0,0,0.06)] bg-[#f0f0f0]/80 backdrop-blur-xl">
@@ -69,7 +76,11 @@ const Navbar = () => {
       <nav className="pointer-events-auto h-[55px] md:h-[65px] glass-pill flex items-center justify-between px-4 md:px-8 w-full border border-[#0a0a0a]/30 shadow-none rounded-full bg-[#f0f0f0]/80 backdrop-blur-xl">
 
         {/* Logo */}
-        <Link href="#about" className="flex items-center group z-50 mr-4 md:mr-8">
+        <Link
+          href="/"
+          onClick={() => setIsMenuOpen(false)}
+          className="flex items-center group z-50 mr-4 md:mr-8"
+        >
           <div className="relative">
             <div className="absolute inset-0 bg-[#a855f7] blur-md rounded-full opacity-50 group-hover:opacity-80 transition-opacity" />
             <Image
@@ -89,7 +100,7 @@ const Navbar = () => {
         {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center gap-1 flex-1 justify-center">
           {navLinks.map((link) => {
-            const isActive = link.href === `#${activeSection}`;
+            const isActive = link.href === `/#${activeSection}`;
             if (link.isExternal) {
               return (
                 <a
@@ -145,7 +156,7 @@ const Navbar = () => {
             className="absolute top-[70px] left-0 right-0 glass-card rounded-2xl flex flex-col p-4 gap-1 md:hidden border border-[#0a0a0a]/20 pointer-events-auto shadow-[0_16px_48px_rgba(0,0,0,0.13)] bg-[#f0f0f0]/95 backdrop-blur-2xl"
           >
             {navLinks.map((link) => {
-              const isActive = link.href === `#${activeSection}`;
+              const isActive = link.href === `/#${activeSection}`;
               if (link.isExternal) {
                 return (
                   <a

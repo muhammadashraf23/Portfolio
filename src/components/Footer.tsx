@@ -1,16 +1,17 @@
 "use client";
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from "framer-motion";
 import { contact } from "@/data/contact";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import SectionContainer from "@/components/SectionContainer";
 
 const footerLinks = [
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
+  { name: "About", href: "/#about" },
+  { name: "Skills", href: "/#skills" },
+  { name: "Projects", href: "/#projects" },
+  { name: "Experience", href: "/#experience" },
 ];
 
 const socialLinks = [
@@ -34,8 +35,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 pb-12">
           {/* Logo & Bio Column */}
           <div className="md:col-span-6 flex flex-col items-start gap-4">
-            <div className="flex items-center gap-3">
-              <div className="relative group">
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#a855f7] to-[#22d3ee] rounded-full blur-md opacity-30 group-hover:opacity-60 transition-opacity"></div>
                 <Image
                   src="/images/logo_square.png"
@@ -48,7 +49,7 @@ const Footer = () => {
               <span className="font-bold text-xl text-gradient font-orbitron tracking-wider">
                 Muhammad Ashraf
               </span>
-            </div>
+            </Link>
             <p className="text-zinc-800 text-sm md:text-base leading-relaxed max-w-sm">
               Crafting premium digital experiences through scalable full-stack architecture and modern web design.
             </p>
@@ -67,13 +68,13 @@ const Footer = () => {
             </h3>
             <div className="flex flex-col gap-2.5 text-zinc-800 font-medium text-sm">
               {footerLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
                   href={link.href}
                   className="transition-all hover:text-[#9333ea] hover:translate-x-1 duration-200"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -106,12 +107,13 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-black/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs md:text-sm text-zinc-600 font-medium">
           <p>© {currentYear} Muhammad Ashraf. All rights reserved.</p>
-          <a
-            href="#about"
-            className="hover:text-[#9333ea] transition-colors"
+          <button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="hover:text-[#9333ea] transition-colors cursor-pointer"
           >
             Back to top ↑
-          </a>
+          </button>
         </div>
       </SectionContainer>
     </motion.footer>
